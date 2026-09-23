@@ -22,12 +22,11 @@ Might change depending on who finishes quicker.
 
 Colors will probably be a blend off black, white, orange and yellow.
 
+Today we discussed about what we were going to make, since its a new project.
+
+
 
 2026-09-23
 We didnt do anything last time since we were focused on planning.
 We continued as we planned last time.
 Nothing unusual or confusing.
-
-
-
-Today we discussed about what we were going to make, since its a new project.
