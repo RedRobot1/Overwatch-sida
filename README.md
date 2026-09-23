@@ -14,7 +14,7 @@ M=History (a short overview of the Overwatch history)
 
 Characters=Elliot
 Maps/gamemodes=Simon
-Main sida som länkar till allt=Simon
+Main site that links to the other sites=Simon
 History=Simon
 Abandoned concepts=Elliot
 
@@ -22,6 +22,11 @@ Might change depending on who finishes quicker.
 
 Colors will probably be a blend off black, white, orange and yellow.
 
+
+2026-09-23
+We didnt do anything last time since we were focused on planning.
+We continued as we planned last time.
+Nothing unusual or confusing.
 
 
 
