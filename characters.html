@@ -167,14 +167,16 @@
     }
 
     .character-image {
-      flex: 0 0 280px;
-      width: 280px;
-      height: 210px;
-      object-fit: cover;
-      border: 2px solid var(--ow-border);
-      border-radius: 5px;
-      background: var(--ow-bg-darker);
-    }
+  flex: 0 0 280px;
+  width: 280px;
+  height: auto;
+  min-height: 210px;
+  max-height: 320px;
+  object-fit: cover;
+  border: 2px solid var(--ow-border);
+  border-radius: 5px;
+  background: var(--ow-bg-darker);
+}
 
     .character-description {
       flex: 1;
