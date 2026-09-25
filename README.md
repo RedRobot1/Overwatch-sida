@@ -42,3 +42,5 @@ Nothing in the way.
 So 53 in total. (manually) changed the maximum height of the character images so i can use taller images witout parts getting clipped.
 Added Anran and Anas pictures.
 Had to tweak around with anas image since it was too tall in most images.
+
+(Simon) I made a main page for the maps and gamemodes and made links for all the different gamemodes. I have almost completed everything for maps and gamemodes except lore and pictures.
