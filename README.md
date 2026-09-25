@@ -38,7 +38,7 @@ We laid the ground for the Heroes site, map/gamemode site and the homesite.
 We are going to keep working on our respective pages.
 Nothing in the way.
 
-(Elliot) I changed the image files to OW_charactername.png
+(Elliot) I changed the image files to OW2_charactername.png
 So 53 in total. (manually) changed the maximum height of the character images so i can use taller images witout parts getting clipped.
 Added Anran and Anas pictures.
 Had to tweak around with anas image since it was too tall in most images.
