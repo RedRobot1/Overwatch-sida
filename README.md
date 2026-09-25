@@ -32,3 +32,8 @@ We continued as we planned last time.
 Nothing unusual or confusing.
 
 (Elliot) accidentally put my characters.html code in the mapsandgamemodes.html, but weve fixed it now.
+
+2026-09-25
+We laid the ground for the Heroes site, map/gamemode site and the homesite.
+We are going to keep working on our respective pages.
+Nothing in the way.
