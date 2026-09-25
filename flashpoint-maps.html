@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashpoint Maps — Overwatch Information Site</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---------- Hero with background image + title ---------- */
+    .maps-hero {
+      position: relative;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image:
+        linear-gradient(rgba(8,16,25,0.55), rgba(8,16,25,0.85)),
+        url("images/flashpoint-hero.jpg");
+      background-size: cover;
+      background-position: center;
+      border-bottom: 3px solid var(--ow-orange);
+    }
+
+    .maps-hero h1 {
+      font-size: 2.6rem;
+      margin: 0;
+    }
+
+    .maps-hero p.subheading {
+      font-family: var(--font-body);
+      color: var(--ow-text-muted);
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: var(--ow-text);
+      background: rgba(14, 26, 36, 0.7);
+      border: 1px solid var(--ow-border);
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--ow-orange);
+      border-color: var(--ow-orange);
+    }
+
+    /* ---------- Map grid, two by two ---------- */
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .map-tile {
+      position: relative;
+      height: 280px;
+      border-radius: 6px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--ow-border);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .map-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(249, 158, 26, 0.2);
+    }
+
+    /* Dark overlay on top of the image so text stays readable */
+    .map-tile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8,16,25,0.15) 0%, rgba(8,16,25,0.55) 55%, rgba(8,16,25,0.92) 100%);
+    }
+
+    .map-tile-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.2rem;
+    }
+
+    .map-tile-content h3 {
+      font-size: 1.3rem;
+      color: var(--ow-white);
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .map-info {
+      font-size: 0.85rem;
+      color: var(--ow-text);
+      line-height: 1.5;
+    }
+
+    .map-info strong {
+      color: var(--ow-orange);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .map-info p {
+      margin-bottom: 0.3rem;
+    }
+
+    .stats-note {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem 2rem;
+      color: var(--ow-text-muted);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .stats-note a {
+      color: var(--ow-orange);
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .map-grid {
+        grid-template-columns: 1fr;
+      }
+      .maps-hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="maps-hero">
+    <a href="maps.html" class="back-link">&larr; Back</a>
+    <div>
+      <h1>Flashpoint Maps</h1>
+      <p class="subheading">Every Flashpoint map in Overwatch 2, with the heroes currently holding the highest win rate on each</p>
+    </div>
+  </div>
+
+  <section class="map-grid">
+
+    <div class="map-tile" style="background-image: url('images/maps/aatlis.jpg');">
+      <div class="map-tile-content">
+        <h3>Aatlis</h3>
+        <div class="map-info">
+          <p><strong>Country:</strong> Morocco</p>
+          <p><strong>Best win rate:</strong> Dmon (61.1% WR), Tracer (54.8% WR), Moira (52.0% WR)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-tile" style="background-image: url('images/maps/new-junk-city.jpg');">
+      <div class="map-tile-content">
+        <h3>New Junk City</h3>
+        <div class="map-info">
+          <p><strong>Country:</strong> Australia</p>
+          <p><strong>Best win rate:</strong> Dmon (58.4% WR), Brigitte (57.2% WR), Doomfist (57.0% WR)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-tile" style="background-image: url('images/maps/suravasa.jpg');">
+      <div class="map-tile-content">
+        <h3>Suravasa</h3>
+        <div class="map-info">
+          <p><strong>Country:</strong> India</p>
+          <p><strong>Best win rate:</strong> Dmon (58.2% WR), Juno (52.8% WR), Moira (51.1% WR)</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <p class="stats-note">Map list and win rate data sourced from <a href="https://owherostats.com/maps" target="_blank" rel="noopener">owherostats.com/maps</a> and <a href="https://owherostats.com/tier-list" target="_blank" rel="noopener">owherostats.com/tier-list</a> (7-day snapshot, all ranks). These numbers change daily, so update them periodically.</p>
+
+  <footer>
+    &copy; 2026 Overwatch Information Site — fan project, not affiliated with Blizzard Entertainment.
+  </footer>
+
+</body>
+</html>
