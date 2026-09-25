@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maps and Gamemodes — Overwatch Information Site</title>
- 
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
- 
+
   <style>
     /* ---------- Hero med bakgrundsbild + titel ---------- */
     .maps-hero {
@@ -24,12 +24,21 @@
       background-position: center;
       border-bottom: 3px solid var(--ow-orange);
     }
- 
+
     .maps-hero h1 {
       font-size: 2.6rem;
       margin: 0;
     }
- 
+
+    .maps-hero p.subheading {
+      font-family: var(--font-body);
+      color: var(--ow-text-muted);
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
     .back-link {
       position: absolute;
       top: 1.2rem;
@@ -47,14 +56,14 @@
       border-radius: 3px;
       transition: all 0.2s ease;
     }
- 
+
     .back-link:hover {
       color: var(--ow-orange);
       border-color: var(--ow-orange);
     }
- 
-    /* ---------- Karta-grid, två och två ---------- */
-    .map-grid {
+
+    /* ---------- Gamemode-grid, två och två ---------- */
+    .gamemode-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
@@ -62,68 +71,76 @@
       margin: 0 auto;
       padding: 3rem 2rem;
     }
- 
-    .map-tile {
+
+    .gamemode-tile {
       position: relative;
-      height: 280px;
+      height: 220px;
       border-radius: 6px;
       overflow: hidden;
       background-size: cover;
       background-position: center;
       border: 1px solid var(--ow-border);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      text-decoration: none;
+      display: block;
     }
- 
-    .map-tile:hover {
+
+    .gamemode-tile:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(249, 158, 26, 0.2);
+      border-color: var(--ow-orange);
+      box-shadow: 0 10px 30px rgba(249, 158, 26, 0.25);
     }
- 
+
     /* Mörkt overlay ovanpå bilden så texten syns tydligt */
-    .map-tile::before {
+    .gamemode-tile::before {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, rgba(8,16,25,0.15) 0%, rgba(8,16,25,0.55) 55%, rgba(8,16,25,0.92) 100%);
     }
- 
-    .map-tile-content {
+
+    .gamemode-tile-content {
       position: absolute;
       inset: 0;
       z-index: 2;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 1.2rem;
+      padding: 1.3rem;
     }
- 
-    .map-tile-content h3 {
-      font-size: 1.3rem;
+
+    .gamemode-tile-content h2 {
+      font-size: 1.5rem;
       color: var(--ow-white);
-      margin-bottom: 0.4rem;
+      margin: 0 0 0.3rem 0;
+      border-left: none;
+      padding-left: 0;
       text-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
- 
-    .map-info {
+
+    .gamemode-tile-content p {
       font-size: 0.85rem;
-      color: var(--ow-text);
-      line-height: 1.5;
+      color: var(--ow-text-muted);
+      margin: 0;
     }
- 
-    .map-info strong {
-      color: var(--ow-orange);
+
+    .gamemode-tile-content .arrow {
+      margin-top: 0.6rem;
       font-family: var(--font-heading);
-      font-size: 0.7rem;
-      letter-spacing: 1px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--ow-orange);
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
- 
-    .map-info p {
-      margin-bottom: 0.3rem;
+
+    /* Flashpoint-rutan spänner över hela bredden (udda antal kort) */
+    .gamemode-tile.wide {
+      grid-column: 1 / -1;
     }
- 
+
     @media (max-width: 700px) {
-      .map-grid {
+      .gamemode-grid {
         grid-template-columns: 1fr;
       }
       .maps-hero h1 {
@@ -133,110 +150,62 @@
   </style>
 </head>
 <body>
- 
+
   <div class="maps-hero">
     <a href="index.html" class="back-link">&larr; Tillbaka</a>
-    <h1>Maps and Gamemodes</h1>
+    <div>
+      <h1>Maps and Gamemodes</h1>
+      <p class="subheading">Which gamemode are you interested in?</p>
+    </div>
   </div>
- 
-  <section class="map-grid">
- 
-    <div class="map-tile" style="background-image: url('images/maps/kings-row.jpg');">
-      <div class="map-tile-content">
-        <h3>King's Row</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> England</p>
-          <p><strong>Best picks:</strong> D.Mon (54.5% WR), Ana (50.3% WR), Widowmaker (54.1& WR)</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="map-tile" style="background-image: url('images/maps/hollywood.jpg');">
-      <div class="map-tile-content">
-        <h3>Hollywood</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> USA</p>
-          <p><strong>Bäst just nu:</strong> Dmon (55.8% WR), Ashe (54.0% WR), Wuyang (54.4% WR)</p>
-        </div>
+  <section class="gamemode-grid">
+
+    <a href="escort-maps.html" class="gamemode-tile" style="background-image: url('images/gamemodes/escort.jpg');">
+      <div class="gamemode-tile-content">
+        <h2>Escort Maps</h2>
+        <p>Escort the cart all the way..</p>
+        <span class="arrow">visa kartor &rarr;</span>
       </div>
-    </div>
- 
-    <div class="map-tile" style="background-image: url('images/maps/numbani.jpg');">
-      <div class="map-tile-content">
-        <h3>Numbani</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> Nigeria</p>
-          <p><strong>Bäst just nu:</strong> Dmon (58.1% WR), Ashe (53.6% WR), Juno (52.5% WR)</p>
-        </div>
+    </a>
+
+    <a href="hybrid-maps.html" class="gamemode-tile" style="background-image: url('images/gamemodes/hybrid.jpg');">
+      <div class="gamemode-tile-content">
+        <h2>Hybrid Maps</h2>
+        <p>Catch the point, then escort.</p>
+        <span class="arrow">Visa kartor &rarr;</span>
       </div>
-    </div>
- 
-    <div class="map-tile" style="background-image: url('images/maps/blizzard-world.jpg');">
-      <div class="map-tile-content">
-        <h3>Blizzard World</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> USA (fiktiv Blizzard-temapark)</p>
-          <p><strong>Bäst just nu:</strong> Domina (58.5% WR), Dmon (56.2% WR), Venture (56.0% WR)</p>
-        </div>
+    </a>
+
+    <a href="control-maps.html" class="gamemode-tile" style="background-image: url('images/gamemodes/control.jpg');">
+      <div class="gamemode-tile-content">
+        <h2>Control Maps</h2>
+        <p>Control the point then capture it.</p>
+        <span class="arrow">Visa kartor &rarr;</span>
       </div>
-    </div>
- 
-    <div class="map-tile" style="background-image: url('images/maps/eichenwalde.jpg');">
-      <div class="map-tile-content">
-        <h3>Eichenwalde</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> Tyskland</p>
-          <p><strong>Bäst just nu:</strong> Dmon (56.4% WR), Pharah (53.0% WR), Venture (53.4% WR)</p>
-        </div>
+    </a>
+
+    <a href="push-maps.html" class="gamemode-tile" style="background-image: url('images/gamemodes/push.jpg');">
+      <div class="gamemode-tile-content">
+        <h2>Push Maps</h2>
+        <p>Push the robot the furthest.</p>
+        <span class="arrow">Visa kartor &rarr;</span>
       </div>
-    </div>
- 
-    <div class="map-tile" style="background-image: url('images/maps/paraiso.jpg');">
-      <div class="map-tile-content">
-        <h3>Paraíso</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> Brasilien</p>
-          <p><strong>Bäst just nu:</strong> Ana (52.3% WR), Dmon (57.5% WR), Ashe (53.6% WR)</p>
-        </div>
+    </a>
+
+    <a href="flashpoint-maps.html" class="gamemode-tile wide" style="background-image: url('images/gamemodes/flashpoint.jpg');">
+      <div class="gamemode-tile-content">
+        <h2>Flashpoint Maps</h2>
+        <p>Capture multiple points in a big map.</p>
+        <span class="arrow">Visa kartor &rarr;</span>
       </div>
-    </div>
- 
-    <div class="map-tile" style="background-image: url('images/maps/neon-junction.jpg');">
-      <div class="map-tile-content">
-        <h3>Neon Junction</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> Japan (Tokyo)</p>
-          <p><strong>Bäst just nu:</strong> Venture (61.0% WR), Vendetta (57.5% WR), Juno (52.1% WR)</p>
-        </div>
-      </div>
-    </div>
- 
-    <div class="map-tile" style="background-image: url('images/maps/midtown.jpg');">
-      <div class="map-tile-content">
-        <h3>Midtown</h3>
-        <div class="map-info">
-          <p><strong>Gamemode:</strong> Hybrid</p>
-          <p><strong>Land:</strong> USA (New York)</p>
-          <p><strong>Bäst just nu:</strong> Wuyang (56.1% WR), Ana (50.5% WR), Ashe (53.4% WR)</p>
-        </div>
-      </div>
-    </div>
-    
- 
-    <!-- Lägg till fler .map-tile block här på samma sätt -->
- 
+    </a>
+
   </section>
- 
+
   <footer>
-    &copy; 2026 Overwatch Information Site — fanprojekt, ej kopplat till Blizzard Entertainment.
+    &copy; 2026 Overwatch Information Site — fanproject, not connected to Blizzard Entertainment.
   </footer>
- 
+
 </body>
 </html>
