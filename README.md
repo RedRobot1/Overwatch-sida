@@ -51,3 +51,5 @@ And we will continue and hopefully finishing the final ground work steps.
 Nothing out of the ordinary.
 
 (Elliot) Added more images for the characters profile. (1 image per character)
+
+(Simon) Fixed the code a little and added gamemode images. One small problem is that the images are a little bit too big but that will be fixed next time.
