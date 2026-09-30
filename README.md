@@ -44,3 +44,8 @@ Added Anran and Anas pictures.
 Had to tweak around with anas image since it was too tall in most images.
 
 (Simon) I made a main page for the maps and gamemodes and made links for all the different gamemodes. I have almost completed everything for maps and gamemodes except lore and pictures.
+
+2026-09-30
+We continued with the grounding of the websites.
+And we will continue and hopefully finishing the final ground work steps.
+Nothing out of the ordinary.
