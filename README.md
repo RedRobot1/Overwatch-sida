@@ -49,3 +49,5 @@ Had to tweak around with anas image since it was too tall in most images.
 We continued with the grounding of the websites.
 And we will continue and hopefully finishing the final ground work steps.
 Nothing out of the ordinary.
+
+(Elliot) Added more images for the characters profile. (1 image per character)
