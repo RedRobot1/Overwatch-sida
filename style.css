@@ -277,10 +277,8 @@ tr:hover td {
 
 /* ---------- Footer ---------- */
 footer {
-  background: var(--ow-bg-darker);
-  border-top: 3px solid var(--ow-blue);
-  padding: 2rem;
   text-align: center;
+  padding: 2rem;
   color: var(--ow-text-muted);
   font-size: 0.85rem;
 }
