@@ -60,3 +60,5 @@ We'll work on respective pages as always.
 Nothing happened that distrubed our progress much.
 
 (Elliot) Added more images to (Characters.html)
+
+(Simon) Fixed footer on everything and fixed image size problem.
