@@ -53,3 +53,8 @@ Nothing out of the ordinary.
 (Elliot) Added more images for the characters profile. (1 image per character)
 
 (Simon) Fixed the code a little and added gamemode images. One small problem is that the images are a little bit too big but that will be fixed next time.
+
+2026-10-02
+We are still working on the same stuff.
+We'll work on respective pages as always.
+Nothing happened that distrubed our progress much.
