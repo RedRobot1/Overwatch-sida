@@ -58,3 +58,5 @@ Nothing out of the ordinary.
 We are still working on the same stuff.
 We'll work on respective pages as always.
 Nothing happened that distrubed our progress much.
+
+(Elliot) Added more images to (Characters.html)
