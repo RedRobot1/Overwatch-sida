@@ -62,3 +62,9 @@ Nothing happened that distrubed our progress much.
 (Elliot) Added more images to (Characters.html)
 
 (Simon) Fixed footer on everything and fixed image size problem.
+
+
+2026-10-07
+We are still working on mostly getting pictures for everything.
+unfortonately Elliot is sick so I work alone.
+(Simon) I added pcitures for control and hybrid maps.
