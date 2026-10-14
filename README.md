@@ -67,4 +67,9 @@ Nothing happened that distrubed our progress much.
 2026-10-07
 We are still working on mostly getting pictures for everything.
 unfortonately Elliot is sick so I work alone.
-(Simon) I added pcitures for control and hybrid maps.
+(Simon) I added pictures for control and hybrid maps.
+
+2026-10-14
+We are still working on getting all the images we need and also making sure they're good. 
+(Simon) I have gotten all images i needed for the maps, gamemodes and the overwatch banner. 
+
