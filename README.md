@@ -73,3 +73,6 @@ unfortonately Elliot is sick so I work alone.
 We are still working on getting all the images we need and also making sure they're good. 
 (Simon) I have gotten all images i needed for the maps, gamemodes and the overwatch banner. 
 
+(Elliot) I added all the images to the character.html site.
+Changed a few texts and typos.
+Next for me is Abandoned concepts if i remember correctly.
