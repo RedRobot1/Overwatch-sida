@@ -109,3 +109,4 @@ with
 }
 
 So it wasnt the hardest to figure out.
+Started on the concepts and abandoned characters.
