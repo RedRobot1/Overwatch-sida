@@ -109,5 +109,10 @@ with
 }
 
 So it wasnt the hardest to figure out.
-Started on the concepts and abandoned characters AND maps/gamemodes
-.
+Started on the concepts and abandoned characters AND maps/gamemodes.
+Made the ground for it now i just need to keep working on it next lection since this one is over pretty soon.
+
+I worked alone on the website today since Simon was mostly done with his stuff for now. He was making a html site for our iphone repair form. So a QR code sends you to a website that gives you information that later sends you to the google form if you want to send a phone in for repairs.
+
+So thats why he wasnt actively working on this specifically today.
+
