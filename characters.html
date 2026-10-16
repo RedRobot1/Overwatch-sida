@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Overwatch Heroes</title>
 
   <style>
@@ -44,14 +44,12 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-
       background:
         linear-gradient(
           rgba(8, 13, 18, 0.45),
           rgba(8, 13, 18, 0.85)
         ),
         url("images/overwatch-banner.jpg") center/cover no-repeat;
-
       border-bottom: 4px solid var(--ow-orange);
     }
 
@@ -74,7 +72,7 @@
       font-size: 1.1rem;
     }
 
-    /* ---------- Hidden-ish Home Link ---------- */
+    /* ---------- Home Link ---------- */
 
     .home-link {
       display: block;
@@ -108,7 +106,57 @@
       color: var(--ow-text-muted);
     }
 
-    /* ---------- Character Box ---------- */
+    /* ---------- Expandable Role Categories ---------- */
+
+    .role-section {
+      margin-bottom: 24px;
+      background: var(--ow-bg-darker);
+      border: 2px solid var(--ow-border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .role-section > summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      background: var(--ow-panel);
+      color: var(--ow-orange);
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: background 0.2s ease;
+    }
+
+    .role-section > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .role-section > summary::before {
+      content: "▶";
+      display: inline-block;
+      margin-right: 14px;
+      color: var(--ow-orange);
+      font-size: 0.85rem;
+      transition: transform 0.2s ease;
+    }
+
+    .role-section[open] > summary::before {
+      transform: rotate(90deg);
+    }
+
+    .role-section > summary:hover {
+      background: rgba(0, 188, 255, 0.08);
+    }
+
+    .role-content {
+      padding: 18px;
+      border-top: 1px solid var(--ow-border);
+    }
+
+    /* ---------- Individual Character Cards ---------- */
 
     .character {
       margin-bottom: 16px;
@@ -118,6 +166,10 @@
       border-radius: 6px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .character:last-child {
+      margin-bottom: 0;
     }
 
     .character summary {
@@ -151,8 +203,6 @@
       background: rgba(0, 188, 255, 0.08);
     }
 
-    /* ONLY the hero name is made larger */
-
     .character-name {
       font-size: 1.45rem;
       color: var(--ow-text);
@@ -167,16 +217,16 @@
     }
 
     .character-image {
-  flex: 0 0 280px;
-  width: 280px;
-  height: auto;
-  min-height: 210px;
-  max-height: 340x;
-  object-fit: cover;
-  border: 2px solid var(--ow-border);
-  border-radius: 5px;
-  background: var(--ow-bg-darker);
-}
+      flex: 0 0 280px;
+      width: 280px;
+      height: auto;
+      min-height: 210px;
+      max-height: 340px;
+      object-fit: cover;
+      border: 2px solid var(--ow-border);
+      border-radius: 5px;
+      background: var(--ow-bg-darker);
+    }
 
     .character-description {
       flex: 1;
@@ -191,104 +241,30 @@
     /* ---------- Footer ---------- */
 
     footer {
-
-      border-bottom: 2px solid var(--ow-orange); 
-
-      padding: 0.7rem; 
-
-      text-align: left; 
-
-    } 
-
-    td { 
-
-      padding: 0.7rem; 
-
-      border-bottom: 1px solid var(--ow-border); 
-
-      color: var(--ow-text-muted); 
-
-    } 
-
-    tr:hover td { 
-
-      background: rgba(0, 188, 255, 0.05); 
-
-      color: var(--ow-text); 
-
-    } 
-
-    /* ---------- Footer ---------- */ 
-
-    footer { 
-
-      background: var(--ow-bg-darker); 
-
-      border-top: 3px solid var(--ow-blue); 
-
-      padding: 2rem; 
-
-      text-align: center; 
-
-      color: var(--ow-text-muted); 
-
-      font-size: 0.85rem; 
-
-    } 
-
-    /* ---------- Scrollbar (Webkit) ---------- */ 
-
-    ::-webkit-scrollbar { 
-
-      width: 10px; 
-
-    } 
-
-    ::-webkit-scrollbar-track { 
-
-      background: var(--ow-bg-darker); 
-
-    } 
-
-    ::-webkit-scrollbar-thumb { 
-
-      background: var(--ow-orange-dark); 
-
-      border-radius: 5px; 
-
-    } 
-
-    /* ---------- Responsivt ---------- */ 
-
-    @media (max-width: 700px) { 
-
-      header { 
-
-        flex-direction: column; 
-
-        gap: 1rem; 
-
-      } 
-
-      nav ul { 
-
-        flex-wrap: wrap; 
-
-        justify-content: center; 
-
-        gap: 1rem; 
-
-      } 
-
-      h1 { 
-
-        font-size: 2rem; 
-
-      } 
-
+      background: var(--ow-bg-darker);
+      border-top: 3px solid var(--ow-blue);
+      padding: 2rem;
+      text-align: center;
+      color: var(--ow-text-muted);
+      font-size: 0.85rem;
     }
 
-    /* ---------- Character Mobile Layout ---------- */
+    /* ---------- Scrollbar ---------- */
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--ow-bg-darker);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--ow-orange-dark);
+      border-radius: 5px;
+    }
+
+    /* ---------- Mobile Layout ---------- */
 
     @media (max-width: 700px) {
       .hero-banner-text h1 {
@@ -312,15 +288,22 @@
       .characters-container {
         width: 94%;
       }
+
+      .role-content {
+        padding: 10px;
+      }
+
+      .role-section > summary {
+        font-size: 1.3rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================================================
-       TOP BANNER
-       ========================================================= -->
+  <!-- ---------- TOP BANNER ---------- -->
 
   <header class="hero-banner">
     <div class="hero-banner-text">
@@ -329,1203 +312,1209 @@
     </div>
   </header>
 
+  <!-- ---------- HOME LINK ---------- -->
 
-  <!-- =========================================================
-       INDEX / HOME IMAGE LINK
-       Put your home/index image at:
-       images/home-icon.png
-       ========================================================= -->
-
-  <a href="index.html" class="home-link" aria-label="Return to homepage">
-    <img src="images/chimney-home-icon-transparent-1.png" alt="Home">
+  <a href="index.html" class="home-link"
+     aria-label="Return to homepage">
+    <img
+      src="images/chimney-home-icon-transparent-1.png"
+      alt="Home">
   </a>
 
-
-  <!-- =========================================================
-       CHARACTERS
-       ========================================================= -->
+  <!-- ---------- CHARACTERS ---------- -->
 
   <main class="characters-container">
 
     <div class="characters-intro">
       <p>
-        Select a hero to expand their profile.
+        Select a role to view its heroes, then select a hero
+        to expand their profile.
       </p>
     </div>
 
+    <!-- =====================================================
+         TANKS
+         ===================================================== -->
 
-    <!-- 1. D.MON -->
+    <details class="role-section">
+      <summary>Tank</summary>
 
-    <details class="character">
-      <summary>
-        <span class="character-name">D.Mon</span>
-      </summary>
+      <div class="role-content">
 
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_DMonBeast.png"
-             alt="D.Mon">
+        <!-- D.MON -->
 
-        <div class="character-description">
-          <p>
-            D.Mon is a heroic mech pilot who fights alongside her team
-            using advanced technology and heavy firepower.
-          </p>
-        </div>
+        <details class="character">
+          <summary>
+            <span class="character-name">D.Mon</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_DMonBeast.png"
+                 alt="D.Mon">
+
+            <div class="character-description">
+              <p>
+                D.Mon is a heroic mech pilot who fights alongside
+                her team using advanced technology and heavy firepower.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- D.VA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">D.Va</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Dva.png"
+                 alt="D.Va">
+
+            <div class="character-description">
+              <p>
+                D.Va is a former professional gamer who pilots
+                a powerful combat mech to defend her home.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- DOMINA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Domina</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Domina.png"
+                 alt="Domina">
+
+            <div class="character-description">
+              <p>
+                Domina is a powerful hero whose abilities bring
+                new tactical possibilities to the Overwatch battlefield.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- DOOMFIST -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Doomfist</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Doomfist.png"
+                 alt="Doomfist">
+
+            <div class="character-description">
+              <p>
+                Doomfist is a formidable Talon leader who believes
+                humanity grows stronger through conflict.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- HAZARD -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Hazard</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Hazard.png"
+                 alt="Hazard">
+
+            <div class="character-description">
+              <p>
+                Hazard is a powerful combatant capable of disrupting
+                enemy formations and controlling dangerous engagements.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- JUNKER QUEEN -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Junker Queen</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_JunkerQueen2.png"
+                 alt="Junker Queen">
+
+            <div class="character-description">
+              <p>
+                Junker Queen rules over Junkertown and leads her
+                forces with an aggressive style built around
+                close-range combat.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- MAUGA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Mauga</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Mauga.png"
+                 alt="Mauga">
+
+            <div class="character-description">
+              <p>
+                Mauga is a heavily armed Talon operative who
+                charges into battle with twin weapons and
+                overwhelming strength.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- ORISA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Orisa</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Orisa.png"
+                 alt="Orisa">
+
+            <div class="character-description">
+              <p>
+                Orisa is a guardian omnic created to defend
+                Numbani and its people from threats.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- RAMATTRA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Ramattra</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Ramattra.png"
+                 alt="Ramattra">
+
+            <div class="character-description">
+              <p>
+                Ramattra is an omnic leader who fights for the
+                future of his people and can switch between
+                powerful forms.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- REINHARDT -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Reinhardt</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Reinhardt.png"
+                 alt="Reinhardt">
+
+            <div class="character-description">
+              <p>
+                Reinhardt is a legendary crusader who protects
+                his allies behind a massive energy barrier.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- ROADHOG -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Roadhog</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Roadhog.png"
+                 alt="Roadhog">
+
+            <div class="character-description">
+              <p>
+                Roadhog is a heavily armed enforcer known for
+                his devastating close-range attacks and
+                signature chain hook.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- SIGMA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Sigma</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Sigma.png"
+                 alt="Sigma">
+
+            <div class="character-description">
+              <p>
+                Sigma is a brilliant astrophysicist whose
+                experiments gave him the ability to manipulate gravity.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- WINSTON -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Winston</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Winston.png"
+                 alt="Winston">
+
+            <div class="character-description">
+              <p>
+                Winston is a brilliant genetically engineered
+                gorilla and scientist who uses advanced
+                technology to protect humanity.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- WRECKING BALL -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Wrecking Ball</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_WreckingBall.png"
+                 alt="Wrecking Ball">
+
+            <div class="character-description">
+              <p>
+                Wrecking Ball is a highly mobile mechanized tank
+                piloted by the genetically engineered hamster Hammond.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- ZARYA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Zarya</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Zarya.png"
+                 alt="Zarya">
+
+            <div class="character-description">
+              <p>
+                Zarya is a powerful soldier who uses particle
+                technology and protective barriers to strengthen
+                herself and her allies.
+              </p>
+            </div>
+          </div>
+        </details>
+
       </div>
     </details>
 
+    <!-- =====================================================
+         DAMAGE
+         ===================================================== -->
 
-    <!-- 2. ANA -->
+    <details class="role-section">
+      <summary>Damage</summary>
 
-    <details class="character">
-      <summary>
-        <span class="character-name">Ana</span>
-      </summary>
+      <div class="role-content">
 
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Ana.png"
-             alt="Ana">
+        <!-- ANRAN -->
 
-        <div class="character-description">
-          <p>
-            Ana is a veteran sniper and founding member of Overwatch who
-            supports her allies from long range.
-          </p>
-        </div>
+        <details class="character">
+          <summary>
+            <span class="character-name">Anran</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Anran.png"
+                 alt="Anran">
+
+            <div class="character-description">
+              <p>
+                Anran is an Overwatch hero with a unique set
+                of abilities designed for the modern battlefield.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- ASHE -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Ashe</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Ashe.png"
+                 alt="Ashe">
+
+            <div class="character-description">
+              <p>
+                Ashe is the leader of the Deadlock Gang and a
+                skilled outlaw who fights with her rifle and
+                trusted omnic companion, B.O.B.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- BASTION -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Bastion</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Bastion.png"
+                 alt="Bastion">
+
+            <div class="character-description">
+              <p>
+                Bastion is a curious combat omnic capable of
+                transforming between different configurations
+                and unleashing heavy firepower.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- CASSIDY -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Cassidy</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Cassidy.png"
+                 alt="Cassidy">
+
+            <div class="character-description">
+              <p>
+                Cassidy is a legendary gunslinger who relies on
+                precision, experience, and his trusty Peacekeeper.
+                (Formerly McCree)
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- ECHO -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Echo</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Echo.png"
+                 alt="Echo">
+
+            <div class="character-description">
+              <p>
+                Echo is an advanced adaptive robot capable of
+                copying enemy abilities and rapidly changing
+                her combat role.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- EMRE -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Emre</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Emre.png"
+                 alt="Emre">
+
+            <div class="character-description">
+              <p>
+                Emre is an Overwatch hero associated with the
+                organization's mysterious history and military
+                operations.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- FREJA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Freja</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Freja.png"
+                 alt="Freja">
+
+            <div class="character-description">
+              <p>
+                Freja is a highly mobile hunter who brings
+                specialized equipment and precision to the fight.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- GENJI -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Genji</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Genji.png"
+                 alt="Genji">
+
+            <div class="character-description">
+              <p>
+                Genji is a cybernetic ninja who uses extraordinary
+                agility and deadly precision to overcome his enemies.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- HANZO -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Hanzo</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Hanzo.png"
+                 alt="Hanzo">
+
+            <div class="character-description">
+              <p>
+                Hanzo is a master archer who combines
+                traditional skills with advanced technology.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- JUNKRAT -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Junkrat</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Junkrat.png"
+                 alt="Junkrat">
+
+            <div class="character-description">
+              <p>
+                Junkrat is an explosive-obsessed demolitionist
+                who specializes in traps, grenades, and chaotic attacks.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- MEI -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Mei</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Mei.png"
+                 alt="Mei">
+
+            <div class="character-description">
+              <p>
+                Mei is a climatologist who uses advanced
+                cryogenic technology to manipulate temperature
+                and protect her team.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- PHARAH -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Pharah</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Pharah.png"
+                 alt="Pharah">
+
+            <div class="character-description">
+              <p>
+                Pharah is a decorated security officer who uses
+                an advanced rocket-powered combat suit to
+                dominate the skies.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- REAPER -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Reaper</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Reaper.png"
+                 alt="Reaper">
+
+            <div class="character-description">
+              <p>
+                Reaper is a mysterious mercenary capable of
+                becoming incorporeal and dealing devastating
+                close-range damage.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- SHION -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Shion</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Shion.png"
+                 alt="Shion">
+
+            <div class="character-description">
+              <p>
+                Shion is a dangerous omnic associated with the
+                Hashimoto Clan and brings a fast, aggressive
+                fighting style to Overwatch.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- SIERRA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Sierra</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Sierra.png"
+                 alt="Sierra">
+
+            <div class="character-description">
+              <p>
+                Sierra is an Overwatch hero equipped for
+                high-pressure encounters and tactical
+                battlefield control.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- SOJOURN -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Sojourn</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Sojourn.png"
+                 alt="Sojourn">
+
+            <div class="character-description">
+              <p>
+                Sojourn is a former Overwatch captain who
+                combines military experience with advanced
+                cybernetic enhancements.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- SOLDIER: 76 -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Soldier: 76</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_S76.png"
+                 alt="Soldier: 76">
+
+            <div class="character-description">
+              <p>
+                Soldier: 76 is a former Overwatch commander
+                who uses advanced weapons and military tactics
+                to fight his enemies.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- SOMBRA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Sombra</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Sombra.png"
+                 alt="Sombra">
+
+            <div class="character-description">
+              <p>
+                Sombra is an expert hacker who uses stealth
+                and technological disruption to manipulate
+                the battlefield.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- SYMMETRA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Symmetra</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Symmetra.png"
+                 alt="Symmetra">
+
+            <div class="character-description">
+              <p>
+                Symmetra is an architect who uses hard-light
+                technology to construct defensive structures
+                and reshape combat spaces.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- TORBJÖRN -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Torbjörn</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Torbjorn.png"
+                 alt="Torbjörn">
+
+            <div class="character-description">
+              <p>
+                Torbjörn is a master engineer who builds turrets
+                and other defensive technology to support his team.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- TRACER -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Tracer</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Tracer.png"
+                 alt="Tracer">
+
+            <div class="character-description">
+              <p>
+                Tracer is a fast-moving Overwatch agent capable
+                of blinking through space and rewinding her
+                personal timeline.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- VENDETTA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Vendetta</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Vendetta.png"
+                 alt="Vendetta">
+
+            <div class="character-description">
+              <p>
+                Vendetta is a formidable hero who brings
+                specialized combat abilities and a distinctive
+                fighting style to the roster.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- VENTURE -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Venture</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Venture.png"
+                 alt="Venture">
+
+            <div class="character-description">
+              <p>
+                Venture is an adventurous archaeologist who
+                uses advanced excavation technology to burrow
+                through the battlefield. Hes also knows as a bum.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- WIDOWMAKER -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Widowmaker</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Widowmaker.png"
+                 alt="Widowmaker">
+
+            <div class="character-description">
+              <p>
+                Widowmaker is an elite sniper who eliminates
+                targets from extreme distances with deadly precision.
+              </p>
+            </div>
+          </div>
+        </details>
+
       </div>
     </details>
 
+    <!-- =====================================================
+         SUPPORTS
+         ===================================================== -->
+
+    <details class="role-section">
+      <summary>Support</summary>
+
+      <div class="role-content">
+
+        <!-- ANA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Ana</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Ana.png"
+                 alt="Ana">
+
+            <div class="character-description">
+              <p>
+                Ana is a veteran sniper and founding member of
+                Overwatch who supports her allies from long range.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- BAPTISTE -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Baptiste</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Baptiste.png"
+                 alt="Baptiste">
+
+            <div class="character-description">
+              <p>
+                Baptiste is an elite combat medic equipped with
+                experimental weapons and technology that help
+                keep his allies alive.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- BRIGITTE -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Brigitte</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Brigitte.png"
+                 alt="Brigitte">
+
+            <div class="character-description">
+              <p>
+                Brigitte is a battle-hardened engineer who fights
+                on the front line while protecting and supporting
+                her teammates.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- ILLARI -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Illari</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Illari.png"
+                 alt="Illari">
+
+            <div class="character-description">
+              <p>
+                Illari is a powerful warrior who channels solar
+                energy through advanced weaponry.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- JETPACK CAT -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Jetpack Cat</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Jetpack_Cat.png"
+                 alt="Jetpack Cat">
+
+            <div class="character-description">
+              <p>
+                Jetpack Cat is a highly mobile hero known for
+                using aerial movement to navigate the battlefield.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- JUNO -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Juno</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Juno.png"
+                 alt="Juno">
+
+            <div class="character-description">
+              <p>
+                Juno is a highly mobile support hero equipped
+                with technology designed to aid allies while
+                navigating the battlefield.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- KIRIKO -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Kiriko</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Kiriko.png"
+                 alt="Kiriko">
+
+            <div class="character-description">
+              <p>
+                Kiriko is a shrine protector who combines
+                spiritual abilities with exceptional agility
+                and kunai combat.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- LIFEWEAVER -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Lifeweaver</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Lifeweaver.png"
+                 alt="Lifeweaver">
+
+            <div class="character-description">
+              <p>
+                Lifeweaver is a brilliant scientist who uses
+                biolight technology to heal and reposition
+                his allies.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- LÚCIO -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Lúcio</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Lucio.png"
+                 alt="Lúcio">
+
+            <div class="character-description">
+              <p>
+                Lúcio is a Brazilian freedom fighter and
+                musician who uses sound technology to heal
+                and empower his teammates.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- MERCY -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Mercy</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Mercy.png"
+                 alt="Mercy">
+
+            <div class="character-description">
+              <p>
+                Mercy is a renowned combat medic who uses
+                advanced technology to heal, enhance, and
+                revive her allies.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- MIZUKI -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Mizuki</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Mizuki.png"
+                 alt="Mizuki">
+
+            <div class="character-description">
+              <p>
+                Mizuki is a modern Overwatch hero bringing
+                new abilities and tactical options to the roster.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- MOIRA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Moira</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Moira.png"
+                 alt="Moira">
+
+            <div class="character-description">
+              <p>
+                Moira is a brilliant but controversial geneticist
+                who uses experimental technology to drain and
+                restore biological energy.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- WUYANG -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Wuyang</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Wuyang.png"
+                 alt="Wuyang">
+
+            <div class="character-description">
+              <p>
+                Wuyang is a water-focused hero whose abilities
+                provide unique battlefield control and support options.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- ZENYATTA -->
+
+        <details class="character">
+          <summary>
+            <span class="character-name">Zenyatta</span>
+          </summary>
+
+          <div class="character-content">
+            <img class="character-image"
+                 src="images/OW2_Zenyatta.png"
+                 alt="Zenyatta">
+
+            <div class="character-description">
+              <p>
+                Zenyatta is an omnic monk who seeks harmony and
+                uses mysterious orbs to heal allies and weaken enemies.
+              </p>
+            </div>
+          </div>
+        </details>
 
-    <!-- 3. ANRAN -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Anran</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Anran.png"
-             alt="Anran">
-
-        <div class="character-description">
-          <p>
-            Anran is an Overwatch hero with a unique set of abilities
-            designed for the modern battlefield.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 4. ASHE -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Ashe</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Ashe.png"
-             alt="Ashe">
-
-        <div class="character-description">
-          <p>
-            Ashe is the leader of the Deadlock Gang and a skilled outlaw
-            who fights with her rifle and trusted omnic companion, B.O.B.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 5. BAPTISTE -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Baptiste</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Baptiste.png"
-             alt="Baptiste">
-
-        <div class="character-description">
-          <p>
-            Baptiste is an elite combat medic equipped with experimental
-            weapons and technology that help keep his allies alive.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 6. BASTION -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Bastion</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Bastion.png"
-             alt="Bastion">
-
-        <div class="character-description">
-          <p>
-            Bastion is a curious combat omnic capable of transforming
-            between different configurations and unleashing heavy firepower.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 7. BRIGITTE -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Brigitte</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Brigitte.png"
-             alt="Brigitte">
-
-        <div class="character-description">
-          <p>
-            Brigitte is a battle-hardened engineer who fights on the front
-            line while protecting and supporting her teammates.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 8. CASSIDY -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Cassidy</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Cassidy.png"
-             alt="Cassidy">
-
-        <div class="character-description">
-          <p>
-            Cassidy is a legendary gunslinger who relies on precision,
-            experience, and his trusty Peacekeeper. (Formerly Mcree)
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 9. D.VA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">D.Va</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Dva.png"
-             alt="D.Va">
-
-        <div class="character-description">
-          <p>
-            D.Va is a former professional gamer who pilots a powerful
-            combat mech to defend her home.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 10. DOMINA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Domina</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Domina.png"
-             alt="Domina">
-
-        <div class="character-description">
-          <p>
-            Domina is a powerful hero whose abilities bring new tactical
-            possibilities to the Overwatch battlefield.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 11. DOOMFIST -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Doomfist</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Doomfist.png"
-             alt="Doomfist">
-
-        <div class="character-description">
-          <p>
-            Doomfist is a formidable Talon leader who believes humanity
-            grows stronger through conflict.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 12. ECHO -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Echo</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Echo.png"
-             alt="Echo">
-
-        <div class="character-description">
-          <p>
-            Echo is an advanced adaptive robot capable of copying enemy
-            abilities and rapidly changing her combat role.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 13. EMRE -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Emre</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Emre.png"
-             alt="Emre">
-
-        <div class="character-description">
-          <p>
-            Emre is an Overwatch hero associated with the organization's
-            mysterious history and military operations.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 14. FREJA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Freja</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Freja.png"
-             alt="Freja">
-
-        <div class="character-description">
-          <p>
-            Freja is a highly mobile hunter who brings specialized
-            equipment and precision to the fight.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 15. GENJI -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Genji</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Genji.png"
-             alt="Genji">
-
-        <div class="character-description">
-          <p>
-            Genji is a cybernetic ninja who uses extraordinary agility
-            and deadly precision to overcome his enemies.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 16. HANZO -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Hanzo</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Hanzo.png"
-             alt="Hanzo">
-
-        <div class="character-description">
-          <p>
-            Hanzo is a master archer who combines traditional skills
-            with advanced technology.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 17. HAZARD -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Hazard</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Hazard.png"
-             alt="Hazard">
-
-        <div class="character-description">
-          <p>
-            Hazard is a powerful combatant capable of disrupting enemy
-            formations and controlling dangerous engagements.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 18. ILLARI -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Illari</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Illari.png"
-             alt="Illari">
-
-        <div class="character-description">
-          <p>
-            Illari is a powerful warrior who channels solar energy
-            through advanced weaponry.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 19. JETPACK CAT -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Jetpack Cat</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Jetpack_Cat.png"
-             alt="Jetpack Cat">
-
-        <div class="character-description">
-          <p>
-            Jetpack Cat is a highly mobile hero known for using aerial
-            movement to navigate the battlefield.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 20. JUNKER QUEEN -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Junker Queen</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_JunkerQueen2.png"
-             alt="Junker Queen">
-
-        <div class="character-description">
-          <p>
-            Junker Queen rules over Junkertown and leads her forces with
-            an aggressive style built around close-range combat.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 21. JUNKRAT -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Junkrat</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Junkrat.png"
-             alt="Junkrat">
-
-        <div class="character-description">
-          <p>
-            Junkrat is an explosive-obsessed demolitionist who specializes
-            in traps, grenades, and chaotic attacks.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 22. JUNO -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Juno</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Juno.png"
-             alt="Juno">
-
-        <div class="character-description">
-          <p>
-            Juno is a highly mobile support hero equipped with technology
-            designed to aid allies while navigating the battlefield.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 23. KIRIKO -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Kiriko</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Kiriko.png"
-             alt="Kiriko">
-
-        <div class="character-description">
-          <p>
-            Kiriko is a shrine protector who combines spiritual abilities
-            with exceptional agility and kunai combat.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 24. LIFEWEAVER -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Lifeweaver</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Lifeweaver.png"
-             alt="Lifeweaver">
-
-        <div class="character-description">
-          <p>
-            Lifeweaver is a brilliant scientist who uses biolight
-            technology to heal and reposition his allies.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 25. LÚCIO -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Lúcio</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Lucio.png"
-             alt="Lúcio">
-
-        <div class="character-description">
-          <p>
-            Lúcio is a Brazilian freedom fighter and musician who uses
-            sound technology to heal and empower his teammates.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 26. MAUGA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Mauga</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Mauga.png"
-             alt="Mauga">
-
-        <div class="character-description">
-          <p>
-            Mauga is a heavily armed Talon operative who charges into
-            battle with twin weapons and overwhelming strength.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 27. MEI -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Mei</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Mei.png"
-             alt="Mei">
-
-        <div class="character-description">
-          <p>
-            Mei is a climatologist who uses advanced cryogenic technology
-            to manipulate temperature and protect her team.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 28. MERCY -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Mercy</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Mercy.png"
-             alt="Mercy">
-
-        <div class="character-description">
-          <p>
-            Mercy is a renowned combat medic who uses advanced technology
-            to heal, enhance, and revive her allies.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 29. MIZUKI -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Mizuki</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Mizuki.png"
-             alt="Mizuki">
-
-        <div class="character-description">
-          <p>
-            Mizuki is a modern Overwatch hero bringing new abilities
-            and tactical options to the roster.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 30. MOIRA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Moira</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Moira.png"
-             alt="Moira">
-
-        <div class="character-description">
-          <p>
-            Moira is a brilliant but controversial geneticist who uses
-            experimental technology to drain and restore biological energy.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 31. ORISA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Orisa</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Orisa.png"
-             alt="Orisa">
-
-        <div class="character-description">
-          <p>
-            Orisa is a guardian omnic created to defend Numbani and its
-            people from threats.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 32. PHARAH -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Pharah</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Pharah.png"
-             alt="Pharah">
-
-        <div class="character-description">
-          <p>
-            Pharah is a decorated security officer who uses an advanced
-            rocket-powered combat suit to dominate the skies.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 33. RAMATTRA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Ramattra</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Ramattra.png"
-             alt="Ramattra">
-
-        <div class="character-description">
-          <p>
-            Ramattra is an omnic leader who fights for the future of
-            his people and can switch between powerful forms.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 34. REAPER -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Reaper</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Reaper.png"
-             alt="Reaper">
-
-        <div class="character-description">
-          <p>
-            Reaper is a mysterious mercenary capable of becoming
-            incorporeal and dealing devastating close-range damage.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 35. REINHARDT -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Reinhardt</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Reinhardt.png"
-             alt="Reinhardt">
-
-        <div class="character-description">
-          <p>
-            Reinhardt is a legendary crusader who protects his allies
-            behind a massive energy barrier.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 36. ROADHOG -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Roadhog</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Roadhog.png"
-             alt="Roadhog">
-
-        <div class="character-description">
-          <p>
-            Roadhog is a heavily armed enforcer known for his devastating
-            close-range attacks and signature chain hook.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 37. SHION -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Shion</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Shion.png"
-             alt="Shion">
-
-        <div class="character-description">
-          <p>
-            Shion is a dangerous omnic associated with the Hashimoto Clan
-            and brings a fast, aggressive fighting style to Overwatch.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 38. SIERRA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Sierra</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Sierra.png"
-             alt="Sierra">
-
-        <div class="character-description">
-          <p>
-            Sierra is an Overwatch hero equipped for high-pressure
-            encounters and tactical battlefield control.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 39. SIGMA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Sigma</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Sigma.png"
-             alt="Sigma">
-
-        <div class="character-description">
-          <p>
-            Sigma is a brilliant astrophysicist whose experiments gave
-            him the ability to manipulate gravity.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 40. SOJOURN -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Sojourn</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Sojourn.png"
-             alt="Sojourn">
-
-        <div class="character-description">
-          <p>
-            Sojourn is a former Overwatch captain who combines military
-            experience with advanced cybernetic enhancements.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 41. SOLDIER: 76 -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Soldier: 76</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_S76.png"
-             alt="Soldier: 76">
-
-        <div class="character-description">
-          <p>
-            Soldier: 76 is a former Overwatch commander who uses advanced
-            weapons and military tactics to fight his enemies.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 42. SOMBRA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Sombra</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Sombra.png"
-             alt="Sombra">
-
-        <div class="character-description">
-          <p>
-            Sombra is an expert hacker who uses stealth and technological
-            disruption to manipulate the battlefield.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 43. SYMMETRA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Symmetra</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Symmetra.png"
-             alt="Symmetra">
-
-        <div class="character-description">
-          <p>
-            Symmetra is an architect who uses hard-light technology to
-            construct defensive structures and reshape combat spaces.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 44. TORBJÖRN -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Torbjörn</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Torbjorn.png"
-             alt="Torbjörn">
-
-        <div class="character-description">
-          <p>
-            Torbjörn is a master engineer who builds turrets and other
-            defensive technology to support his team.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 45. TRACER -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Tracer</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Tracer.png"
-             alt="Tracer">
-
-        <div class="character-description">
-          <p>
-            Tracer is a fast-moving Overwatch agent capable of blinking
-            through space and rewinding her personal timeline.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 46. VENDETTA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Vendetta</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Vendetta.png"
-             alt="Vendetta">
-
-        <div class="character-description">
-          <p>
-            Vendetta is a formidable hero who brings specialized combat
-            abilities and a distinctive fighting style to the roster.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 47. VENTURE -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Venture</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Venture.png"
-             alt="Venture">
-
-        <div class="character-description">
-          <p>
-            Venture is an adventurous archaeologist who uses advanced
-            excavation technology to burrow through the battlefield.
-            Hes also knows as a bum.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 48. WIDOWMAKER -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Widowmaker</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Widowmaker.png"
-             alt="Widowmaker">
-
-        <div class="character-description">
-          <p>
-            Widowmaker is an elite sniper who eliminates targets from
-            extreme distances with deadly precision.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 49. WINSTON -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Winston</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Winston.png"
-             alt="Winston">
-
-        <div class="character-description">
-          <p>
-            Winston is a brilliant genetically engineered gorilla and
-            scientist who uses advanced technology to protect humanity.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 50. WRECKING BALL -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Wrecking Ball</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_WreckingBall.png"
-             alt="Wrecking Ball">
-
-        <div class="character-description">
-          <p>
-            Wrecking Ball is a highly mobile mechanized tank piloted by
-            the genetically engineered hamster Hammond.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 51. WUYANG -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Wuyang</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Wuyang.png"
-             alt="Wuyang">
-
-        <div class="character-description">
-          <p>
-            Wuyang is a water-focused hero whose abilities provide
-            unique battlefield control and support options.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 52. ZARYA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Zarya</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Zarya.png"
-             alt="Zarya">
-
-        <div class="character-description">
-          <p>
-            Zarya is a powerful soldier who uses particle technology
-            and protective barriers to strengthen herself and her allies.
-          </p>
-        </div>
-      </div>
-    </details>
-
-
-    <!-- 53. ZENYATTA -->
-
-    <details class="character">
-      <summary>
-        <span class="character-name">Zenyatta</span>
-      </summary>
-
-      <div class="character-content">
-        <img class="character-image"
-             src="images/OW2_Zenyatta.png"
-             alt="Zenyatta">
-
-        <div class="character-description">
-          <p>
-            Zenyatta is an omnic monk who seeks harmony and uses
-            mysterious orbs to heal allies and weaken enemies.
-          </p>
-        </div>
       </div>
     </details>
 
   </main>
 
-
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
+  <!-- ---------- FOOTER ---------- -->
 
   <footer>
     <p>Overwatch Heroes</p>
@@ -1534,6 +1523,3 @@
 
 </body>
 </html>
-```
-
-
