@@ -76,3 +76,36 @@ We are still working on getting all the images we need and also making sure they
 (Elliot) I added all the images to the character.html site.
 Changed a few texts and typos.
 Next for me is Abandoned concepts if i remember correctly.
+
+
+
+2026-10-16
+
+(Elliot) Put all the heroes in each bracket so for example, all tank characters go in a expandable and collapsable section that holds all tank characters. that section still holds the characters own brackets that can expand and collapse. this is just to clean it up without having to scroll half a mile before reaching the character you want to find.
+And i did the same with damage dealers and supports.
+Ran into a small problem with the images themselves after i asked ChatGPT to put them in their respective brackets.
+I fixed this by replacing   
+.character-image {
+  flex: 0 0 280px;
+  width: 280px;
+  height: 340px;
+  object-fit: fill;
+  border: 2px solid var(--ow-border);
+  border-radius: 5px;
+  background: var(--ow-bg-darker);
+}
+
+with
+
+.character-image {
+  flex: 0 0 280px;
+  width: 280px;
+  height: 340px;
+  object-fit: contain;
+  object-position: center;
+  border: 2px solid var(--ow-border);
+  border-radius: 5px;
+  background: var(--ow-bg-darker);
+}
+
+So it wasnt the hardest to figure out.
