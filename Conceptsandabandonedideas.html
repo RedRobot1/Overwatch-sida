@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concepts and Abandoned Ideas | Overwatch Hub</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Base theme (copied from style.css so this page works on its own) ===== */
+    :root {
+      --ow-orange: #F99E1A; --ow-orange-dark: #D97F0B;
+      --ow-blue: #00BCFF; --ow-blue-dark: #0086C3;
+      --ow-bg-dark: #0E1A24; --ow-bg-darker: #081019;
+      --ow-panel: #16232F; --ow-panel-light: #1E3040;
+      --ow-border: #2A4152; --ow-text: #E8EEF2;
+      --ow-text-muted: #8FA3B0; --ow-white: #FFFFFF;
+      --font-heading: 'Orbitron', 'Eurostile', 'Segoe UI', sans-serif;
+      --font-body: 'Rajdhani', 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: linear-gradient(160deg, var(--ow-bg-darker) 0%, var(--ow-bg-dark) 60%, #10202c 100%);
+      background-color: var(--ow-bg-dark);
+      color: var(--ow-text);
+      font-family: var(--font-body);
+      font-size: 18px; line-height: 1.6; min-height: 100vh;
+    }
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading); text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--ow-white);
+    }
+    h1 {
+      font-size: 2.8rem; font-weight: 900;
+      background: linear-gradient(90deg, var(--ow-orange), var(--ow-blue));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    h2 {
+      font-size: 1.8rem; font-weight: 700;
+      border-left: 5px solid var(--ow-orange);
+      padding-left: 12px; margin-bottom: 1rem;
+    }
+    header {
+      background: var(--ow-bg-darker); border-bottom: 3px solid var(--ow-orange);
+      padding: 1.2rem 2rem; display: flex; align-items: center;
+      justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    nav ul { display: flex; list-style: none; gap: 1.8rem; }
+    nav a {
+      color: var(--ow-text); text-decoration: none; font-family: var(--font-heading);
+      font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+      position: relative; padding-bottom: 4px; transition: color 0.2s ease;
+    }
+    nav a::after {
+      content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px;
+      background: var(--ow-orange); transition: width 0.25s ease;
+    }
+    nav a:hover { color: var(--ow-orange); }
+    nav a:hover::after { width: 100%; }
+    .section { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+    .panel {
+      background: var(--ow-panel-light); border: 1px solid var(--ow-border);
+      border-radius: 6px; padding: 2rem;
+    }
+    .btn {
+      display: inline-block; font-family: var(--font-heading); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
+      padding: 0.8rem 2rem; border-radius: 3px; cursor: pointer;
+      text-decoration: none; transition: all 0.2s ease;
+    }
+    .btn-secondary { background: transparent; color: var(--ow-blue); border: 2px solid var(--ow-blue); }
+    .btn-secondary:hover { background: rgba(0,188,255,0.1); }
+    footer { text-align: center; padding: 2rem; color: var(--ow-text-muted); font-size: 0.85rem; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--ow-bg-darker); }
+    ::-webkit-scrollbar-thumb { background: var(--ow-orange-dark); border-radius: 5px; }
+    @media (max-width: 700px) {
+      header { flex-direction: column; gap: 1rem; }
+      nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      h1 { font-size: 2rem; }
+    }
+
+    /* ===== Page-specific styles ===== */
+    /* Extra styles only for this page (uses variables from style.css, with fallbacks) */
+    .banner {
+      width: 100%;
+      display: block;
+      max-height: 480px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--ow-orange);
+    }
+
+    .subtext {
+      text-align: center;
+      padding: 0.9rem 1rem;
+      background: var(--ow-bg-darker);
+      color: var(--ow-text-muted);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--ow-border);
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .controls button {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--ow-orange);
+      border: 1px solid var(--ow-orange);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .controls button:hover {
+      background: var(--ow-orange);
+      color: var(--ow-bg-darker);
+    }
+
+    details.group {
+      margin-bottom: 1rem;
+      border: 1px solid var(--ow-border);
+      border-left: 4px solid var(--ow-orange);
+      background: var(--ow-bg-darker);
+    }
+
+    details.group > summary {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    details > summary::-webkit-details-marker { display: none; }
+
+    details > summary::after {
+      content: "+";
+      color: var(--ow-orange);
+      font-size: 1.4rem;
+      transition: transform 0.2s;
+    }
+    details[open] > summary::after { content: "–"; }
+
+    .group-body { padding: 0 1.2rem 1.2rem; }
+
+    details.item {
+      margin-top: 0.8rem;
+      border: 1px solid var(--ow-border);
+      background: var(--ow-bg-dark);
+    }
+
+    details.item > summary {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.7rem 1rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    details.item > summary:hover { color: var(--ow-orange); }
+
+    .tag {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid currentColor;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .tag.concept   { color: var(--ow-blue); }
+    .tag.abandoned { color: #FF5A5F; }
+
+    .item-body {
+      padding: 0 1rem 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .item-body img {
+      width: 260px;
+      max-width: 100%;
+      border: 1px solid var(--ow-border);
+      object-fit: cover;
+    }
+    .item-body p { flex: 1; min-width: 220px; margin: 0; line-height: 1.5; }
+
+    @media (max-width: 700px) {
+      .item-body img { width: 100%; }
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-width banner -->
+  <img class="banner" src="images/OverwatchBanner.jpg" alt="Overwatch banner">
+
+  <p class="subtext">Overwatch information site. We used AI for this site!</p>
+
+  <header>
+    <h1 style="font-size:1.4rem;">OVERWATCH HUB</h1>
+    <nav>
+      <ul>
+        <li><a href="https://redrobot1.github.io/Overwatch-sida/#">Home</a></li>
+        <li><a href="characters.html">Heroes</a></li>
+        <li><a href="MapsandGamemodes.html">Maps and Gamemodes</a></li>
+        <li><a href="Conceptsandabandonedideas.html">Concepts and Abandoned ideas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="panel">
+      <h2>Concepts and Abandoned Ideas</h2>
+      <p>Click a section to expand it, then click an idea to read more.</p>
+
+      <div class="controls">
+        <button type="button" id="expandAll">Expand all</button>
+        <button type="button" id="collapseAll">Collapse all</button>
+      </div>
+
+      <!-- MAPS -->
+      <details class="group" open>
+        <summary>Maps</summary>
+        <div class="group-body">
+
+          <details class="item">
+            <summary>Map idea name here <span class="tag concept">Concept</span></summary>
+            <div class="item-body">
+              <img src="images/map-concept-1.jpg" alt="Map concept art">
+              <p>Short explanation of this map concept goes here.</p>
+            </div>
+          </details>
+
+          <details class="item">
+            <summary>Cut map name here <span class="tag abandoned">Abandoned</span></summary>
+            <div class="item-body">
+              <img src="images/map-abandoned-1.jpg" alt="Abandoned map">
+              <p>Short explanation of why this map was abandoned.</p>
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <!-- GAMEMODES -->
+      <details class="group">
+        <summary>Gamemodes</summary>
+        <div class="group-body">
+
+          <details class="item">
+            <summary>Assault (2CP) <span class="tag abandoned">Abandoned</span></summary>
+            <div class="item-body">
+              <img src="images/gamemode-assault.jpg" alt="Assault gamemode">
+              <p>Two Control Point was one of the original modes. It was dropped when Overwatch 2 launched, and its maps were left out of the rotation.</p>
+            </div>
+          </details>
+
+          <details class="item">
+            <summary>Gamemode idea name here <span class="tag concept">Concept</span></summary>
+            <div class="item-body">
+              <img src="images/gamemode-concept-1.jpg" alt="Gamemode concept">
+              <p>Short explanation of this gamemode concept goes here.</p>
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <!-- HEROES -->
+      <details class="group">
+        <summary>Heroes</summary>
+        <div class="group-body">
+
+          <details class="item">
+            <summary>Project Titan <span class="tag abandoned">Abandoned</span></summary>
+            <div class="item-body">
+              <img src="images/titan.jpg" alt="Project Titan concept art">
+              <p>Overwatch grew out of Blizzard's cancelled MMO project, Titan. Some of the ideas and characters were reworked into the hero shooter we know today.</p>
+            </div>
+          </details>
+
+          <details class="item">
+            <summary>Hero Talents (PvE) <span class="tag abandoned">Abandoned</span></summary>
+            <div class="item-body">
+              <img src="images/hero-talents.jpg" alt="Hero talents concept">
+              <p>Overwatch 2 was planned to have talent trees for upgrading heroes in PvE missions. The plans for the full PvE campaign were scaled back and the talents were not released as first planned.</p>
+            </div>
+          </details>
+
+          <details class="item">
+            <summary>Hero concept name here <span class="tag concept">Concept</span></summary>
+            <div class="item-body">
+              <img src="images/hero-concept-1.jpg" alt="Hero concept art">
+              <p>Short explanation of this hero concept goes here.</p>
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <a class="btn btn-secondary back-home" href="https://redrobot1.github.io/Overwatch-sida/#">&larr; Back to home page</a>
+    </div>
+  </section>
+
+  <footer>
+   Fan made project
+  </footer>
+
+  <script>
+    const all = () => document.querySelectorAll('details');
+    document.getElementById('expandAll').addEventListener('click', () => all().forEach(d => d.open = true));
+    document.getElementById('collapseAll').addEventListener('click', () => all().forEach(d => d.open = false));
+  </script>
+</body>
+</html>
