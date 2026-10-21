@@ -116,4 +116,11 @@ I worked alone on the website today since Simon was mostly done with his stuff f
 
 So thats why he wasnt actively working on this specifically today.
 
+
+2026-10-21
+
 (Simon) I didn't do much today, just worked a little on the home page, added some text and relaxed. Once Elliot is done with the concepts and stuff we will look at what we can add and improve to get better.
+
+(Elliot) Changed home button the the character site, and i also described and added images to the concept site. So now its completed.
+had to change multiple tags and add and remove sections since its very hard to find certain information since Blizzard doesnt give out information about concepts and abandoned ideas.
+
