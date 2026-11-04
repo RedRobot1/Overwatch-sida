@@ -124,3 +124,7 @@ So thats why he wasnt actively working on this specifically today.
 (Elliot) Changed home button the the character site, and i also described and added images to the concept site. So now its completed.
 had to change multiple tags and add and remove sections since its very hard to find certain information since Blizzard doesnt give out information about concepts and abandoned ideas.
 
+
+2026-11-04
+
+(Elliot) I conceptsandideas fråga jag claude om en kod som låter användaren förstora bilden när man klickar på den. Och som minskar när man klickar igen.
