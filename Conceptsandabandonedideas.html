@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concepts and Abandoned Ideas </title>
-
+ 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+ 
   <style>
     /* ===== Base theme (copied from style.css so this page works on its own) ===== */
     :root {
@@ -80,7 +80,7 @@
       nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
       h1 { font-size: 2rem; }
     }
-
+ 
     .subtext {
       text-align: center;
       padding: 0.9rem 1rem;
@@ -92,7 +92,7 @@
       text-transform: uppercase;
       border-bottom: 1px solid var(--ow-border);
     }
-
+ 
     .controls {
       display: flex;
       gap: 0.6rem;
@@ -100,7 +100,7 @@
       flex-wrap: wrap;
       margin-bottom: 1.2rem;
     }
-
+ 
     .controls button {
       font-family: var(--font-heading);
       font-size: 0.75rem;
@@ -117,14 +117,14 @@
       background: var(--ow-orange);
       color: var(--ow-bg-darker);
     }
-
+ 
     details.group {
       margin-bottom: 1rem;
       border: 1px solid var(--ow-border);
       border-left: 4px solid var(--ow-orange);
       background: var(--ow-bg-darker);
     }
-
+ 
     details.group > summary {
       font-family: var(--font-heading);
       font-size: 1.1rem;
@@ -137,9 +137,9 @@
       justify-content: space-between;
       align-items: center;
     }
-
+ 
     details > summary::-webkit-details-marker { display: none; }
-
+ 
     details > summary::after {
       content: "+";
       color: var(--ow-orange);
@@ -147,15 +147,15 @@
       transition: transform 0.2s;
     }
     details[open] > summary::after { content: "–"; }
-
+ 
     .group-body { padding: 0 1.2rem 1.2rem; }
-
+ 
     details.item {
       margin-top: 0.8rem;
       border: 1px solid var(--ow-border);
       background: var(--ow-bg-dark);
     }
-
+ 
     details.item > summary {
       font-family: var(--font-body);
       font-weight: 700;
@@ -169,7 +169,7 @@
       gap: 0.8rem;
     }
     details.item > summary:hover { color: var(--ow-orange); }
-
+ 
     .tag {
       font-family: var(--font-heading);
       font-size: 0.65rem;
@@ -182,7 +182,7 @@
     }
     .tag.concept   { color: var(--ow-blue); }
     .tag.abandoned { color: #FF5A5F; }
-
+ 
     .item-body {
       padding: 0 1rem 1rem;
       display: flex;
@@ -197,11 +197,11 @@
       object-fit: cover;
     }
     .item-body p { flex: 1; min-width: 220px; margin: 0; line-height: 1.5; }
-
+ 
     @media (max-width: 700px) {
       .item-body img { width: 100%; }
     }
-
+ 
     .back-home {
       display: inline-block;
       margin-top: 1rem;
@@ -210,62 +210,37 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    /* Click-to-expand images */
-.item-body img { cursor: zoom-in; }
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(8, 16, 25, 0.92);
-  z-index: 1000;
-  cursor: zoom-out;
-  padding: 1rem;
-}
-.lightbox.show { display: flex; }
-.lightbox img {
-  width: auto;
-  max-width: 94vw;
-  max-height: 94vh;
-  border: 2px solid var(--ow-orange);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
-}
-
-2. HTML. Paste this right above your <script> tag:
-
-html
-<div class="lightbox" id="lightbox">
-  <img id="lightboxImg" src="" alt="">
-</div>
-
-3. JavaScript. Paste this inside your existing <script>, below the two expand/collapse lines:
-
-js
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-
-document.querySelectorAll('.item-body img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('show');
-  });
-});
-
-lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') lightbox.classList.remove('show');
-});
+ 
+    /* ===== Click-to-expand images (lightbox) ===== */
+    .item-body img { cursor: zoom-in; }
+ 
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(8, 16, 25, 0.92);
+      z-index: 1000;
+      cursor: zoom-out;
+      padding: 1rem;
+    }
+    .lightbox.show { display: flex; }
+    .lightbox img {
+      width: auto;
+      max-width: 94vw;
+      max-height: 94vh;
+      border: 2px solid var(--ow-orange);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+    }
   </style>
 </head>
 <body>
-
+ 
   <!-- Full-width banner -->
-
+ 
   <p class="subtext">Overwatch information site. We used AI for this site!</p>
-
+ 
   <header>
     <h1 style="font-size:1.4rem;">OVERWATCH HUB</h1>
     <nav>
@@ -277,22 +252,22 @@ document.addEventListener('keydown', e => {
       </ul>
     </nav>
   </header>
-
+ 
   <section class="section">
     <div class="panel">
       <h2>Concepts and Abandoned Ideas</h2>
       <p>Click a section to expand it, then click an idea to read more.</p>
-
+ 
       <div class="controls">
         <button type="button" id="expandAll">Expand all</button>
         <button type="button" id="collapseAll">Collapse all</button>
       </div>
-
+ 
       <!-- MAPS -->
       <details class="group" open>
         <summary>Maps</summary>
         <div class="group-body">
-
+ 
           <details class="item">
             <summary>Hanamura <span class="tag abandoned">Abandoned</span></summary>
             <div class="item-body">
@@ -302,7 +277,7 @@ document.addEventListener('keydown', e => {
               Deeply rooted to the lore of Genji and Hanzo.</p>
             </div>
           </details>
-
+ 
           <details class="item">
             <summary>Paris <span class="tag abandoned">Abandoned</span></summary>
             <div class="item-body">
@@ -311,7 +286,7 @@ document.addEventListener('keydown', e => {
                 also pulled from core playlists for balance and design issues.</p>
             </div>
           </details>
-
+ 
            <details class="item">
             <summary>Horizon Lunar Colony <span class="tag abandoned">Abandoned</span></summary>
             <div class="item-body">
@@ -320,7 +295,7 @@ document.addEventListener('keydown', e => {
                 due to long-standing community controversy over its design.</p>
             </div>
           </details>
-
+ 
            <details class="item">
             <summary>Temple of Anubis <span class="tag abandoned">Abandoned</span></summary>
             <div class="item-body">
@@ -339,12 +314,12 @@ document.addEventListener('keydown', e => {
           
         </div>
       </details>
-
+ 
       <!-- GAMEMODES -->
       <details class="group">
         <summary>Gamemodes</summary>
         <div class="group-body">
-
+ 
           <details class="item">
             <summary>Campaign (PVE) <span class="tag abandoned">Abandoned</span></summary>
             <div class="item-body">
@@ -357,15 +332,15 @@ document.addEventListener('keydown', e => {
                 were ultimately abandoned, leaving much of the planned experience unrealized.</p>
             </div>
           </details>
-
+ 
         </div>
       </details>
-
+ 
       <!-- HEROES -->
       <details class="group">
         <summary>Heroes</summary>
         <div class="group-body">
-
+ 
           <details class="item">
             <summary>Early Overwatch hero designs <span class="tag concept">Concept</span></summary>
             <div class="item-body">
@@ -373,23 +348,45 @@ document.addEventListener('keydown', e => {
               <p>Early designs of Overwatch Heroes. A few of them are still similar to the final version</p>
             </div>
           </details>
-
-
+ 
+ 
         </div>
       </details>
-
+ 
       <a class="btn btn-secondary back-home" href="https://redrobot1.github.io/Overwatch-sida/#">&larr; Back to home page</a>
     </div>
   </section>
-
+ 
   <footer>
    Fan made project
   </footer>
-
+ 
+  <!-- Lightbox for enlarged images -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+ 
   <script>
     const all = () => document.querySelectorAll('details');
     document.getElementById('expandAll').addEventListener('click', () => all().forEach(d => d.open = true));
     document.getElementById('collapseAll').addEventListener('click', () => all().forEach(d => d.open = false));
+ 
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+ 
+    document.querySelectorAll('.item-body img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('show');
+      });
+    });
+ 
+    lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') lightbox.classList.remove('show');
+    });
   </script>
 </body>
 </html>
+ 
