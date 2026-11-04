@@ -210,6 +210,54 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+    /* Click-to-expand images */
+.item-body img { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 16, 25, 0.92);
+  z-index: 1000;
+  cursor: zoom-out;
+  padding: 1rem;
+}
+.lightbox.show { display: flex; }
+.lightbox img {
+  width: auto;
+  max-width: 94vw;
+  max-height: 94vh;
+  border: 2px solid var(--ow-orange);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+}
+
+2. HTML. Paste this right above your <script> tag:
+
+html
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+3. JavaScript. Paste this inside your existing <script>, below the two expand/collapse lines:
+
+js
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+
+document.querySelectorAll('.item-body img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('show');
+  });
+});
+
+lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') lightbox.classList.remove('show');
+});
   </style>
 </head>
 <body>
