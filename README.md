@@ -128,3 +128,7 @@ had to change multiple tags and add and remove sections since its very hard to f
 2026-11-04
 
 (Elliot) I conceptsandideas fråga jag claude om en kod som låter användaren förstora bilden när man klickar på den. Och som minskar när man klickar igen.
+
+2026-11-11
+
+(Elliot) I tried doing stats with claude but i got out of limit so now its on cool down. So thats all i can do today.
