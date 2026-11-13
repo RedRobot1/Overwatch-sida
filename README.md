@@ -132,3 +132,8 @@ had to change multiple tags and add and remove sections since its very hard to f
 2026-11-11
 
 (Elliot) I tried doing stats with claude but i got out of limit so now its on cool down. So thats all i can do today.
+
+2026-11-13
+
+(Elliot) Added abilites and stats to each hero witht he help of claude. I also spent some time to double check that its info is correct.
+
