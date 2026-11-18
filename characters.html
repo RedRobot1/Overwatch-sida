@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Overwatch Heroes</title>
- 
+
   <style>
     :root {
       --ow-orange: #f99e1a;
@@ -17,15 +17,15 @@
       --ow-text: #ffffff;
       --ow-text-muted: #aebbc5;
     }
- 
+
     * {
       box-sizing: border-box;
     }
- 
+
     html {
       scroll-behavior: smooth;
     }
- 
+
     body {
       margin: 0;
       background: var(--ow-bg);
@@ -33,9 +33,9 @@
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
- 
+
     /* ---------- Top Banner ---------- */
- 
+
     .hero-banner {
       min-height: 260px;
       display: flex;
@@ -50,12 +50,12 @@
         url("images/overwatch-banner.jpg") center/cover no-repeat;
       border-bottom: 4px solid var(--ow-orange);
     }
- 
+
     .hero-banner-text {
       padding: 2rem;
       max-width: 900px;
     }
- 
+
     .hero-banner-text h1 {
       margin: 0;
       font-size: 3.5rem;
@@ -63,49 +63,28 @@
       text-transform: uppercase;
       text-shadow: 0 3px 12px #000;
     }
- 
+
     .hero-banner-text p {
       margin: 0.7rem 0 0;
       color: var(--ow-text-muted);
       font-size: 1.1rem;
     }
- 
-    /* ---------- Home Link ---------- */
- 
-    .home-link {
-      display: block;
-      width: 70px;
-      height: 45px;
-      margin: 18px auto 5px;
-      opacity: 0.25;
-      transition: opacity 0.2s ease;
-    }
- 
-    .home-link:hover {
-      opacity: 0.9;
-    }
- 
-    .home-link img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
- 
+
     /* ---------- Character Container ---------- */
- 
+
     .characters-container {
       width: min(1100px, 92%);
       margin: 30px auto 60px;
     }
- 
+
     .characters-intro {
       text-align: center;
       margin-bottom: 30px;
       color: var(--ow-text-muted);
     }
- 
+
     /* ---------- Expandable Role Categories ---------- */
- 
+
     .role-section {
       margin-bottom: 24px;
       background: var(--ow-bg-darker);
@@ -114,7 +93,7 @@
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
- 
+
     .role-section > summary {
       cursor: pointer;
       list-style: none;
@@ -127,11 +106,11 @@
       letter-spacing: 0.06em;
       transition: background 0.2s ease;
     }
- 
+
     .role-section > summary::-webkit-details-marker {
       display: none;
     }
- 
+
     .role-section > summary::before {
       content: "▶";
       display: inline-block;
@@ -140,22 +119,22 @@
       font-size: 0.85rem;
       transition: transform 0.2s ease;
     }
- 
+
     .role-section[open] > summary::before {
       transform: rotate(90deg);
     }
- 
+
     .role-section > summary:hover {
       background: rgba(0, 188, 255, 0.08);
     }
- 
+
     .role-content {
       padding: 18px;
       border-top: 1px solid var(--ow-border);
     }
- 
+
     /* ---------- Individual Character Cards ---------- */
- 
+
     .character {
       margin-bottom: 16px;
       background: var(--ow-panel);
@@ -165,11 +144,11 @@
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
- 
+
     .character:last-child {
       margin-bottom: 0;
     }
- 
+
     .character summary {
       cursor: pointer;
       list-style: none;
@@ -179,11 +158,11 @@
       background: rgba(255, 255, 255, 0.025);
       transition: background 0.2s ease;
     }
- 
+
     .character summary::-webkit-details-marker {
       display: none;
     }
- 
+
     .character summary::before {
       content: "▶";
       display: inline-block;
@@ -192,20 +171,20 @@
       font-size: 0.8rem;
       transition: transform 0.2s ease;
     }
- 
+
     .character[open] summary::before {
       transform: rotate(90deg);
     }
- 
+
     .character summary:hover {
       background: rgba(0, 188, 255, 0.08);
     }
- 
+
     .character-name {
       font-size: 1.45rem;
       color: var(--ow-text);
     }
- 
+
     .character-content {
       display: flex;
       gap: 25px;
@@ -213,7 +192,7 @@
       border-top: 1px solid var(--ow-border);
       align-items: flex-start;
     }
- 
+
    .character-image {
   flex: 0 0 280px;
   width: 280px;
@@ -224,19 +203,19 @@
   border-radius: 5px;
   background: var(--ow-bg-darker);
 }
- 
+
     .character-description {
       flex: 1;
       color: var(--ow-text-muted);
       font-size: 1rem;
     }
- 
+
     .character-description p {
       margin-top: 0;
     }
- 
+
     /* ---------- Hero Stats and Abilities ---------- */
- 
+
     .hero-stats h4 {
       margin: 1rem 0 0.4rem;
       color: var(--ow-orange);
@@ -244,20 +223,20 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
- 
+
     .hero-stats ul {
       margin: 0;
       padding-left: 1.1rem;
     }
- 
+
     .hero-stats li {
       margin-bottom: 0.3rem;
     }
- 
+
     .hero-stats b {
       color: var(--ow-text);
     }
- 
+
     .ability-type {
       color: var(--ow-blue);
       font-size: 0.75rem;
@@ -265,9 +244,9 @@
       letter-spacing: 0.05em;
       margin-left: 0.3rem;
     }
- 
+
     /* ---------- Footer ---------- */
- 
+
     footer {
       background: var(--ow-bg-darker);
       border-top: 3px solid var(--ow-blue);
@@ -276,114 +255,163 @@
       color: var(--ow-text-muted);
       font-size: 0.85rem;
     }
- 
+
     /* ---------- Scrollbar ---------- */
- 
+
     ::-webkit-scrollbar {
       width: 10px;
     }
- 
+
     ::-webkit-scrollbar-track {
       background: var(--ow-bg-darker);
     }
- 
+
     ::-webkit-scrollbar-thumb {
       background: var(--ow-orange-dark);
       border-radius: 5px;
     }
- 
+
     /* ---------- Mobile Layout ---------- */
- 
+
     @media (max-width: 700px) {
       .hero-banner-text h1 {
         font-size: 2rem;
       }
- 
+
       .hero-banner {
         min-height: 200px;
       }
- 
+
       .character-content {
         flex-direction: column;
       }
- 
+
       .character-image {
         width: 100%;
         flex: none;
         height: 220px;
       }
- 
+
       .characters-container {
         width: 94%;
       }
     }
+
+    /* ---------- Site Navigation ---------- */
+
+    .site-header {
+      background: var(--ow-bg-darker);
+      border-bottom: 1px solid var(--ow-border);
+      padding: 1rem 1.5rem;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      margin: 0 0 0.6rem;
+      font-family: "Orbitron", Arial, sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      color: var(--ow-text);
+    }
+
+    .site-header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem 1.6rem;
+    }
+
+    .site-header nav a {
+      font-family: "Rajdhani", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ow-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-header nav a:hover {
+      color: var(--ow-orange);
+    }
   </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
- 
+
 <body>
- 
+
   <!-- ---------- TOP BANNER ---------- -->
- 
+
   <header class="hero-banner">
     <div class="hero-banner-text">
       <h1>OVERWATCH HEROES</h1>
       <p>Explore the heroes of Overwatch</p>
     </div>
   </header>
- 
-  <!-- ---------- HOME LINK ---------- -->
- 
-  <a href="index.html" class="home-link"
-     aria-label="Return to homepage">
-    <img
-      src="images/home-white-icon.png"
-      alt="Home">
-  </a>
- 
+
+  <!-- ---------- SITE NAVIGATION ---------- -->
+
+  <header class="site-header">
+    <h1>OVERWATCH HUB</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="characters.html">Heroes</a></li>
+        <li><a href="MapsandGamemodes.html">Maps and Gamemodes</a></li>
+        <li><a href="Conceptsandabandonedideas.html">Concepts and Abandoned ideas</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- ---------- CHARACTERS ---------- -->
- 
+
   <main class="characters-container">
- 
+
     <div class="characters-intro">
       <p>
         Select a role to view its heroes, then select a hero
         to expand their profile.
       </p>
     </div>
- 
+
     <!-- =====================================================
          TANKS
          ===================================================== -->
- 
+
     <details class="role-section">
       <summary>Tank</summary>
- 
+
       <div class="role-content">
- 
+
         <!-- D.MON -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">D.Mon</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_DMonBeast.png"
                  alt="D.Mon">
- 
+
             <div class="character-description">
               <p>
                 D.Mon is a heroic mech pilot who fights alongside her team using advanced technology and heavy firepower.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Stalwart</li>
                   <li><b>Health:</b> 675 (425 health + 250 armor); pilot 175</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Eject!</b><span class="ability-type">Passive</span> – Eject out of your mech when it is destroyed.</li>
@@ -400,31 +428,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- D.VA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">D.Va</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Dva.png"
                  alt="D.Va">
- 
+
             <div class="character-description">
               <p>
                 D.Va is a former professional gamer who pilots a powerful combat mech to defend her home.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Initiator</li>
                   <li><b>Health:</b> 675 (350 health + 325 armor); pilot 175</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Eject!</b><span class="ability-type">Passive</span> – Eject out of your mech when it is destroyed.</li>
@@ -440,31 +468,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- DOMINA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Domina</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Domina.png"
                  alt="Domina">
- 
+
             <div class="character-description">
               <p>
                 Domina is a powerful hero whose abilities bring new tactical possibilities to the Overwatch battlefield.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Stalwart</li>
                   <li><b>Health:</b> 650 (250 health + 400 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Reconstruction</b><span class="ability-type">Passive</span> – Dealing damage with abilities restores shields.</li>
@@ -478,31 +506,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- DOOMFIST -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Doomfist</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Doomfist.png"
                  alt="Doomfist">
- 
+
             <div class="character-description">
               <p>
                 Doomfist is a formidable Talon leader who believes humanity grows stronger through conflict.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Initiator</li>
                   <li><b>Health:</b> 525 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>The Best Defense...</b><span class="ability-type">Passive</span> – Dealing damage with abilities creates temporary overhealth.</li>
@@ -516,31 +544,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- HAZARD -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Hazard</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Hazard.png"
                  alt="Hazard">
- 
+
             <div class="character-description">
               <p>
                 Hazard is a powerful combatant capable of disrupting enemy formations and controlling dangerous engagements.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Initiator</li>
                   <li><b>Health:</b> 650 (425 health + 225 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Vault</b><span class="ability-type">Passive</span> – Scale short walls and grab ledges.</li>
@@ -554,31 +582,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- JUNKER QUEEN -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Junker Queen</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_JunkerQueen2.png"
                  alt="Junker Queen">
- 
+
             <div class="character-description">
               <p>
                 Junker Queen rules over Junkertown and leads her forces with an aggressive style built around close-range combat.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Stalwart</li>
                   <li><b>Health:</b> 575 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Scattergun</b><span class="ability-type">Weapon</span> – Pump-action shotgun.</li>
@@ -592,31 +620,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- MAUGA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Mauga</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Mauga.png"
                  alt="Mauga">
- 
+
             <div class="character-description">
               <p>
                 Mauga is a heavily armed Talon operative who charges into battle with twin weapons and overwhelming strength.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Bruiser</li>
                   <li><b>Health:</b> 725 (575 health + 150 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Berserker</b><span class="ability-type">Passive</span> – Gain temporary health when dealing critical damage.</li>
@@ -630,31 +658,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- ORISA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Orisa</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Orisa.png"
                  alt="Orisa">
- 
+
             <div class="character-description">
               <p>
                 Orisa is a guardian omnic created to defend Numbani and its people from threats.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Bruiser</li>
                   <li><b>Health:</b> 600 (300 health + 300 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Augmented Fusion Driver</b><span class="ability-type">Weapon</span> – Automatic heat-based weapon.</li>
@@ -667,31 +695,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- RAMATTRA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Ramattra</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Ramattra.png"
                  alt="Ramattra">
- 
+
             <div class="character-description">
               <p>
                 Ramattra is an omnic leader who fights for the future of his people and can switch between powerful forms.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Stalwart</li>
                   <li><b>Health:</b> 525 (425 health + 100 armor; +275 armor in Nemesis Form)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Void Accelerator (Omnic Form)</b><span class="ability-type">Weapon</span> – Fire a stream of projectiles.</li>
@@ -705,31 +733,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- REINHARDT -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Reinhardt</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Reinhardt.png"
                  alt="Reinhardt">
- 
+
             <div class="character-description">
               <p>
                 Reinhardt is a legendary crusader who protects his allies behind a massive energy barrier.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Stalwart</li>
                   <li><b>Health:</b> 700 (400 health + 300 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Rocket Hammer</b><span class="ability-type">Weapon</span> – Devastating melee weapon.</li>
@@ -742,31 +770,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- ROADHOG -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Roadhog</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Roadhog.png"
                  alt="Roadhog">
- 
+
             <div class="character-description">
               <p>
                 Roadhog is a heavily armed enforcer known for his devastating close-range attacks and signature chain hook.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Bruiser</li>
                   <li><b>Health:</b> 750 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Scrap Gun</b><span class="ability-type">Weapon</span> – Short-range shotgun that fires in two bursts.</li>
@@ -779,31 +807,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- SIGMA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Sigma</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Sigma.png"
                  alt="Sigma">
- 
+
             <div class="character-description">
               <p>
                 Sigma is a brilliant astrophysicist whose experiments gave him the ability to manipulate gravity.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Stalwart</li>
                   <li><b>Health:</b> 600 (350 health + 250 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Hyperspheres</b><span class="ability-type">Weapon</span> – Launch two charges that implode after a short duration, dealing damage in an area.</li>
@@ -816,31 +844,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- WINSTON -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Winston</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Winston.png"
                  alt="Winston">
- 
+
             <div class="character-description">
               <p>
                 Winston is a brilliant genetically engineered gorilla and scientist who uses advanced technology to protect humanity.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Initiator</li>
                   <li><b>Health:</b> 625 (425 health + 200 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Tesla Cannon</b><span class="ability-type">Weapon</span> – Electric frontal-cone weapon. Hold to charge, release to fire focused electricity.</li>
@@ -852,31 +880,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- WRECKING BALL -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Wrecking Ball</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_WreckingBall.png"
                  alt="Wrecking Ball">
- 
+
             <div class="character-description">
               <p>
                 Wrecking Ball is a highly mobile mechanized tank piloted by the genetically engineered hamster Hammond.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Initiator</li>
                   <li><b>Health:</b> 725 (450 health + 125 armor + 150 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Quad Cannons</b><span class="ability-type">Weapon</span> – Automatic assault weapons.</li>
@@ -890,31 +918,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- ZARYA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Zarya</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Zarya.png"
                  alt="Zarya">
- 
+
             <div class="character-description">
               <p>
                 Zarya is a powerful soldier who uses particle technology and protective barriers to strengthen herself and her allies.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Tank – Bruiser</li>
                   <li><b>Health:</b> 550 (325 health + 225 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Particle Cannon</b><span class="ability-type">Weapon</span> – Short-range linear beam weapon with an energy grenade launcher.</li>
@@ -926,43 +954,43 @@
             </div>
           </div>
         </details>
- 
+
       </div>
     </details>
- 
+
     <!-- =====================================================
          DAMAGE
          ===================================================== -->
- 
+
     <details class="role-section">
       <summary>Damage</summary>
- 
+
       <div class="role-content">
- 
+
         <!-- ANRAN -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Anran</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Anran.png"
                  alt="Anran">
- 
+
             <div class="character-description">
               <p>
                 Anran is an Overwatch hero with a unique set of abilities designed for the modern battlefield.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Flanker</li>
                   <li><b>Health:</b> 250 health; 6 m/s base speed</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Ignition</b><span class="ability-type">Passive</span> – Hit enemies with fire attacks to burn them.</li>
@@ -977,31 +1005,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- ASHE -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Ashe</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Ashe.png"
                  alt="Ashe">
- 
+
             <div class="character-description">
               <p>
                 Ashe is the leader of the Deadlock Gang and a skilled outlaw who fights with her rifle and trusted omnic companion, B.O.B.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Sharpshooter</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>The Viper</b><span class="ability-type">Weapon</span> – Semi-automatic rifle; aim down sights for a scoped precision shot.</li>
@@ -1013,31 +1041,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- BASTION -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Bastion</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Bastion.png"
                  alt="Bastion">
- 
+
             <div class="character-description">
               <p>
                 Bastion is a curious combat omnic capable of transforming between different configurations and unleashing heavy firepower.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Specialist</li>
                   <li><b>Health:</b> 350 (250 health + 100 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Ironclad</b><span class="ability-type">Passive</span> – Take reduced damage while in Assault configuration.</li>
@@ -1050,31 +1078,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- CASSIDY -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Cassidy</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Cassidy.png"
                  alt="Cassidy">
- 
+
             <div class="character-description">
               <p>
                 Cassidy is a legendary gunslinger who relies on precision, experience, and his trusty Peacekeeper. (Formerly McCree)
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Sharpshooter</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Peacekeeper</b><span class="ability-type">Weapon</span> – Revolver with accurate single shots and a rapid fan-the-hammer secondary.</li>
@@ -1086,31 +1114,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- ECHO -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Echo</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Echo.png"
                  alt="Echo">
- 
+
             <div class="character-description">
               <p>
                 Echo is an advanced adaptive robot capable of copying enemy abilities and rapidly changing her combat role.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Recon</li>
                   <li><b>Health:</b> 225 (150 health + 75 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Tri-Shot</b><span class="ability-type">Weapon</span> – Fire three projectiles in a burst.</li>
@@ -1123,31 +1151,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- EMRE -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Emre</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Emre.png"
                  alt="Emre">
- 
+
             <div class="character-description">
               <p>
                 Emre is an Overwatch hero associated with the organization&#x27;s mysterious history and military operations.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Specialist</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Altered Vitals</b><span class="ability-type">Passive</span> – Passive health regeneration activates sooner and instantly restores 30 health.</li>
@@ -1161,31 +1189,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- FREJA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Freja</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Freja.png"
                  alt="Freja">
- 
+
             <div class="character-description">
               <p>
                 Freja is a highly mobile hunter who brings specialized equipment and precision to the fight.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Recon</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Bounty Hunting</b><span class="ability-type">Passive</span> – Every few Killing Blows grant bonus ultimate charge.</li>
@@ -1199,31 +1227,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- GENJI -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Genji</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Genji.png"
                  alt="Genji">
- 
+
             <div class="character-description">
               <p>
                 Genji is a cybernetic ninja who uses extraordinary agility and deadly precision to overcome his enemies.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Flanker</li>
                   <li><b>Health:</b> 250 health; 6 m/s base speed</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Cyber-Agility</b><span class="ability-type">Passive</span> – Climb walls and double jump.</li>
@@ -1236,31 +1264,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- HANZO -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Hanzo</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Hanzo.png"
                  alt="Hanzo">
- 
+
             <div class="character-description">
               <p>
                 Hanzo is a master archer who combines traditional skills with advanced technology.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Sharpshooter</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Storm Bow</b><span class="ability-type">Weapon</span> – Fire arrows; hold to draw back for more speed and damage.</li>
@@ -1273,31 +1301,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- JUNKRAT -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Junkrat</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Junkrat.png"
                  alt="Junkrat">
- 
+
             <div class="character-description">
               <p>
                 Junkrat is an explosive-obsessed demolitionist who specializes in traps, grenades, and chaotic attacks.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Specialist</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Total Mayhem</b><span class="ability-type">Passive</span> – Drop a bunch of live grenades when eliminated.</li>
@@ -1310,31 +1338,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- MEI -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Mei</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Mei.png"
                  alt="Mei">
- 
+
             <div class="character-description">
               <p>
                 Mei is a climatologist who uses advanced cryogenic technology to manipulate temperature and protect her team.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Specialist</li>
                   <li><b>Health:</b> 300 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Endothermic Blaster</b><span class="ability-type">Weapon</span> – Short-range stream that slows and freezes enemies; secondary fires an icicle.</li>
@@ -1346,31 +1374,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- PHARAH -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Pharah</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Pharah.png"
                  alt="Pharah">
- 
+
             <div class="character-description">
               <p>
                 Pharah is a decorated security officer who uses an advanced rocket-powered combat suit to dominate the skies.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Recon</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Hover Jets</b><span class="ability-type">Passive</span> – Hold to hover in the air.</li>
@@ -1383,31 +1411,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- REAPER -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Reaper</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Reaper.png"
                  alt="Reaper">
- 
+
             <div class="character-description">
               <p>
                 Reaper is a mysterious mercenary capable of becoming incorporeal and dealing devastating close-range damage.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Flanker</li>
                   <li><b>Health:</b> 300 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>The Reaping</b><span class="ability-type">Passive</span> – Heal for a portion of damage dealt.</li>
@@ -1420,31 +1448,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- SHION -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Shion</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Shion.png"
                  alt="Shion">
- 
+
             <div class="character-description">
               <p>
                 Shion is a dangerous omnic associated with the Hashimoto Clan and brings a fast, aggressive fighting style to Overwatch.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Flanker</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Kira Pistols</b><span class="ability-type">Weapon</span> – Rapid-fire anima pistols.</li>
@@ -1457,31 +1485,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- SIERRA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Sierra</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Sierra.png"
                  alt="Sierra">
- 
+
             <div class="character-description">
               <p>
                 Sierra is an Overwatch hero equipped for high-pressure encounters and tactical battlefield control.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Recon</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Helix Rifle</b><span class="ability-type">Weapon</span> – Automatic rifle with a spiral firing pattern that tightens during sustained fire.</li>
@@ -1494,31 +1522,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- SOJOURN -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Sojourn</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Sojourn.png"
                  alt="Sojourn">
- 
+
             <div class="character-description">
               <p>
                 Sojourn is a former Overwatch captain who combines military experience with advanced cybernetic enhancements.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Sharpshooter</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Rail</b><span class="ability-type">Passive</span> – Rail charge builds up as you deal damage.</li>
@@ -1531,31 +1559,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- SOLDIER: 76 -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Soldier: 76</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_S76.png"
                  alt="Soldier: 76">
- 
+
             <div class="character-description">
               <p>
                 Soldier: 76 is a former Overwatch commander who uses advanced weapons and military tactics to fight his enemies.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Specialist</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Heavy Pulse Rifle</b><span class="ability-type">Weapon</span> – Automatic assault rifle.</li>
@@ -1568,31 +1596,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- SOMBRA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Sombra</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Sombra.png"
                  alt="Sombra">
- 
+
             <div class="character-description">
               <p>
                 Sombra is an expert hacker who uses stealth and technological disruption to manipulate the battlefield.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Recon (moved to Support / Tactician in Season 5)</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Conspirator</b><span class="ability-type">Passive</span> – Reveals enemies with a fully charged ultimate.</li>
@@ -1606,31 +1634,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- SYMMETRA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Symmetra</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Symmetra.png"
                  alt="Symmetra">
- 
+
             <div class="character-description">
               <p>
                 Symmetra is an architect who uses hard-light technology to construct defensive structures and reshape combat spaces.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Specialist</li>
                   <li><b>Health:</b> 275 (125 health + 150 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Photon Projector</b><span class="ability-type">Weapon</span> – Beam weapon that locks on; secondary fires an energy orb.</li>
@@ -1642,31 +1670,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- TORBJÖRN -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Torbjörn</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Torbjorn.png"
                  alt="Torbjörn">
- 
+
             <div class="character-description">
               <p>
                 Torbjörn is a master engineer who builds turrets and other defensive technology to support his team.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Specialist</li>
                   <li><b>Health:</b> 300 (225 health + 75 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Rivet Gun</b><span class="ability-type">Weapon</span> – Fire rivets at mid range; secondary fires a close-range blast.</li>
@@ -1679,31 +1707,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- TRACER -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Tracer</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Tracer.png"
                  alt="Tracer">
- 
+
             <div class="character-description">
               <p>
                 Tracer is a fast-moving Overwatch agent capable of blinking through space and rewinding her personal timeline.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Flanker</li>
                   <li><b>Health:</b> 175 health; 6 m/s base speed</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Pulse Pistols</b><span class="ability-type">Weapon</span> – Dual rapid-fire pistols.</li>
@@ -1715,31 +1743,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- VENDETTA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Vendetta</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Vendetta.png"
                  alt="Vendetta">
- 
+
             <div class="character-description">
               <p>
                 Vendetta is a formidable hero who brings specialized combat abilities and a distinctive fighting style to the roster.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Flanker</li>
                   <li><b>Health:</b> 275 (200 health + 75 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Palatine Fang</b><span class="ability-type">Weapon</span> – Hard-light greatsword. Combo swings to end with a destructive overhead slash.</li>
@@ -1753,31 +1781,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- VENTURE -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Venture</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Venture.png"
                  alt="Venture">
- 
+
             <div class="character-description">
               <p>
                 Venture is an adventurous archaeologist who uses advanced excavation technology to burrow through the battlefield. Hes also knows as a bum.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Flanker</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Explorer&#x27;s Resolve</b><span class="ability-type">Passive</span> – Using abilities grants temporary shields.</li>
@@ -1791,31 +1819,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- WIDOWMAKER -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Widowmaker</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Widowmaker.png"
                  alt="Widowmaker">
- 
+
             <div class="character-description">
               <p>
                 Widowmaker is an elite sniper who eliminates targets from extreme distances with deadly precision.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Damage – Sharpshooter</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Widow&#x27;s Kiss</b><span class="ability-type">Weapon</span> – Automatic rifle; secondary mode is a scoped sniper shot.</li>
@@ -1827,43 +1855,43 @@
             </div>
           </div>
         </details>
- 
+
       </div>
     </details>
- 
+
     <!-- =====================================================
          SUPPORTS
          ===================================================== -->
- 
+
     <details class="role-section">
       <summary>Support</summary>
- 
+
       <div class="role-content">
- 
+
         <!-- ANA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Ana</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Ana.png"
                  alt="Ana">
- 
+
             <div class="character-description">
               <p>
                 Ana is a veteran sniper and founding member of Overwatch who supports her allies from long range.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Tactician</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Biotic Rifle</b><span class="ability-type">Weapon</span> – Scoped rifle that heals allies and damages enemies.</li>
@@ -1875,31 +1903,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- BAPTISTE -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Baptiste</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Baptiste.png"
                  alt="Baptiste">
- 
+
             <div class="character-description">
               <p>
                 Baptiste is an elite combat medic equipped with experimental weapons and technology that help keep his allies alive.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Tactician</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Biotic Launcher</b><span class="ability-type">Weapon</span> – Burst rifle; secondary lobs a healing grenade.</li>
@@ -1911,31 +1939,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- BRIGITTE -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Brigitte</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Brigitte.png"
                  alt="Brigitte">
- 
+
             <div class="character-description">
               <p>
                 Brigitte is a battle-hardened engineer who fights on the front line while protecting and supporting her teammates.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Survivor</li>
                   <li><b>Health:</b> 250 (175 health + 75 armor)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Inspire</b><span class="ability-type">Passive</span> – Dealing damage heals nearby allies.</li>
@@ -1950,31 +1978,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- ILLARI -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Illari</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Illari.png"
                  alt="Illari">
- 
+
             <div class="character-description">
               <p>
                 Illari is a powerful warrior who channels solar energy through advanced weaponry.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Survivor</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Solar Rifle</b><span class="ability-type">Weapon</span> – Fires solar bolts that damage enemies; secondary heals allies.</li>
@@ -1986,31 +2014,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- JETPACK CAT -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Jetpack Cat</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Jetpack_Cat.png"
                  alt="Jetpack Cat">
- 
+
             <div class="character-description">
               <p>
                 Jetpack Cat is a highly mobile hero known for using aerial movement to navigate the battlefield.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Tactician</li>
                   <li><b>Health:</b> 200 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Jetpack</b><span class="ability-type">Passive</span> – Permanent flight.</li>
@@ -2024,31 +2052,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- JUNO -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Juno</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Juno.png"
                  alt="Juno">
- 
+
             <div class="character-description">
               <p>
                 Juno is a highly mobile support hero equipped with technology designed to aid allies while navigating the battlefield.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Survivor</li>
                   <li><b>Health:</b> 225 (75 health + 150 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Glide Boost</b><span class="ability-type">Passive</span> – Flying movement boost.</li>
@@ -2061,31 +2089,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- KIRIKO -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Kiriko</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Kiriko.png"
                  alt="Kiriko">
- 
+
             <div class="character-description">
               <p>
                 Kiriko is a shrine protector who combines spiritual abilities with exceptional agility and kunai combat.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Medic</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Healing Ofuda</b><span class="ability-type">Weapon</span> – Throw talismans that heal allies.</li>
@@ -2098,31 +2126,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- LIFEWEAVER -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Lifeweaver</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Lifeweaver.png"
                  alt="Lifeweaver">
- 
+
             <div class="character-description">
               <p>
                 Lifeweaver is a brilliant scientist who uses biolight technology to heal and reposition his allies.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Medic</li>
                   <li><b>Health:</b> 250 (200 health + 50 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Thorn Volley</b><span class="ability-type">Weapon</span> – Fire thorns at enemies.</li>
@@ -2136,31 +2164,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- LÚCIO -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Lúcio</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Lucio.png"
                  alt="Lúcio">
- 
+
             <div class="character-description">
               <p>
                 Lúcio is a Brazilian freedom fighter and musician who uses sound technology to heal and empower his teammates.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Tactician</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Sonic Amplifier</b><span class="ability-type">Weapon</span> – Fires sonic projectiles; secondary blasts enemies back.</li>
@@ -2173,31 +2201,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- MERCY -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Mercy</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Mercy.png"
                  alt="Mercy">
- 
+
             <div class="character-description">
               <p>
                 Mercy is a renowned combat medic who uses advanced technology to heal, enhance, and revive her allies.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Medic</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Angelic Descent</b><span class="ability-type">Passive</span> – Slowly descend while falling.</li>
@@ -2211,31 +2239,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- MIZUKI -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Mizuki</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Mizuki.png"
                  alt="Mizuki">
- 
+
             <div class="character-description">
               <p>
                 Mizuki is a modern Overwatch hero bringing new abilities and tactical options to the roster.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Survivor</li>
                   <li><b>Health:</b> 250 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Remedy Aura</b><span class="ability-type">Passive</span> – Heals nearby allies; scales with resources from dealing damage and healing.</li>
@@ -2249,31 +2277,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- MOIRA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Moira</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Moira.png"
                  alt="Moira">
- 
+
             <div class="character-description">
               <p>
                 Moira is a brilliant but controversial geneticist who uses experimental technology to drain and restore biological energy.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Medic</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Biotic Grasp</b><span class="ability-type">Weapon</span> – Beam that heals allies or damages enemies.</li>
@@ -2285,31 +2313,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- WUYANG -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Wuyang</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Wuyang.png"
                  alt="Wuyang">
- 
+
             <div class="character-description">
               <p>
                 Wuyang is a water-focused hero whose abilities provide unique battlefield control and support options.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Survivor</li>
                   <li><b>Health:</b> 225 health</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Xuanwu Staff</b><span class="ability-type">Weapon</span> – Fire a damaging water orb. Hold to control its trajectory and empower its explosion.</li>
@@ -2322,31 +2350,31 @@
             </div>
           </div>
         </details>
- 
+
         <!-- ZENYATTA -->
- 
+
         <details class="character">
           <summary>
             <span class="character-name">Zenyatta</span>
           </summary>
- 
+
           <div class="character-content">
             <img class="character-image"
                  src="images/OW2_Zenyatta.png"
                  alt="Zenyatta">
- 
+
             <div class="character-description">
               <p>
                 Zenyatta is an omnic monk who seeks harmony and uses mysterious orbs to heal allies and weaken enemies.
               </p>
- 
+
               <div class="hero-stats">
                 <h4>Stats</h4>
                 <ul>
                   <li><b>Role:</b> Support – Tactician</li>
                   <li><b>Health:</b> 250 (75 health + 175 shields)</li>
                 </ul>
- 
+
                 <h4>Abilities</h4>
                 <ul>
                 <li><b>Orb of Destruction</b><span class="ability-type">Weapon</span> – Fire energy orbs at enemies.</li>
@@ -2358,19 +2386,18 @@
             </div>
           </div>
         </details>
- 
+
       </div>
     </details>
- 
+
   </main>
- 
+
   <!-- ---------- FOOTER ---------- -->
- 
+
   <footer>
     <p>Overwatch Heroes</p>
     <p>Fan-made website</p>
   </footer>
- 
+
 </body>
 </html>
- 
