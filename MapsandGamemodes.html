@@ -77,8 +77,8 @@
   height: 240px;
   border-radius: 6px;
   overflow: hidden;
-  background-color: #000;          /* svart bakgrund */
-  background-size: contain;        /* hela bilden syns, svart runt om om den inte är kvadratisk */
+  background-color: #000;
+  background-size: 160px 160px;   /* alla bilder får svart ram runt om */
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid var(--ow-border);
@@ -135,11 +135,10 @@
       letter-spacing: 1px;
     }
 
-  .gamemode-tile.wide {
+.gamemode-tile.wide {
   grid-column: 1 / -1;
   justify-self: center;
 }
-
    @media (max-width: 700px) {
   .gamemode-grid {
     grid-template-columns: 240px;
