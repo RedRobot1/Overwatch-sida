@@ -137,3 +137,7 @@ had to change multiple tags and add and remove sections since its very hard to f
 
 (Elliot) Added abilites and stats to each hero witht he help of claude. I also spent some time to double check that its info is correct.
 
+2026-11-18
+
+(Elliot) Added Home, Heroes, Maps and Gamemodes, Concepts and Abandoned ideas to the character page. (The ones you can click to traverse the different sites.)
+The rest of the time i just tried to figure out what to add to my character page or concept and abandoned ideas.
